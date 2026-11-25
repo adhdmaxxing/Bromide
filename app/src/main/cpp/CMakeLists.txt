@@ -88,3 +88,6 @@ add_library(fbraw SHARED fbraw.cpp)
 find_library(zlib z)
 target_link_libraries(fbraw libraw ${zlib})
 target_compile_options(fbraw PRIVATE -O2 -Wall)
+# Google Play requires 16 KB page alignment for native code (Android 15+ devices with 16 KB
+# pages). NDK r28+ does this by default; r27 needs it asked for.
+target_link_options(fbraw PRIVATE "-Wl,-z,max-page-size=16384")
