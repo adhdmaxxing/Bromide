@@ -1,0 +1,54 @@
+name: Build APK
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # the build number is the commit count
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Engine unit tests
+        run: ./gradlew --no-daemon :app:testDebugUnitTest
+
+      - name: Build debug APK
+        run: ./gradlew --no-daemon :app:assembleDebug
+
+      - name: Rename APK
+        run: cp app/build/outputs/apk/debug/app-debug.apk Bromide.apk
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Bromide-debug-apk
+          path: Bromide.apk
+          retention-days: 30
+
+      # Every push to main refreshes the "latest" pre-release, so the newest APK
+      # is always one tap away at github.com/<owner>/<repo>/releases/latest
+      - name: Publish latest build
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION=$(jq -r '.elements[0].versionName' app/build/outputs/apk/debug/output-metadata.json)
+          gh release delete latest --yes --cleanup-tag || true
+          gh release create latest Bromide.apk \
+            --title "Bromide $VERSION (latest build)" \
+            --notes "Bromide $VERSION, automatic build of ${GITHUB_SHA::7}. Download Bromide.apk on your phone and open it to install." \
+            --target "$GITHUB_SHA" --latest

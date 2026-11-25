@@ -1,0 +1,12 @@
+Bromide LUT bundle (bromide_luts.npz)
+
+Film modeling powered by spektrafilm - https://github.com/andreavolpato/spektrafilm
+LUTs (c) Andrea Volpato, licensed CC BY-SA 4.0 (see LUT_LICENSE.txt).
+
+Changes from the original spektrafilm output:
+- Baked with spektrafilm 0.3.4 (spektrafilm-lut build), 65^3, input Sony S-Log3
+  (S-Gamut3.Cine), output sRGB, each negative printed on its profile's target paper
+  (Kodak Portra Endura, Fujifilm Crystal Archive Type II, Kodak 2383 for Vision3).
+- Slide films (Provia 100F, Velvia 100, Ektachrome 100, Kodachrome 64) baked with the
+  same runtime settings plus scan_film=True (the LUT tool doesn't support slides yet).
+- Stored as uint16 arrays in one compressed .npz instead of .cube text files.

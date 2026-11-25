@@ -1,0 +1,118 @@
+{
+ "c200": {
+  "Film": "fujifilm_c200",
+  "Print": "fujifilm_crystal_archive_typeii",
+  "Input": "Sony S-Log3 (S-Gamut3.Cine)  (cctf on)",
+  "Output": "sRGB  (cctf on)",
+  "Created": "2026-10-12T00:10:02Z",
+  "spektrafilm": "0.3.4"
+ },
+ "ektachrome100": {
+  "Film": "kodak_ektachrome_100",
+  "Print": "none (slide film, scanned)",
+  "Input": "Sony S-Log3 (S-Gamut3.Cine)",
+  "Output": "sRGB",
+  "spektrafilm": "0.3.4 (scan_film bake)"
+ },
+ "ektar100": {
+  "Film": "kodak_ektar_100",
+  "Print": "kodak_portra_endura",
+  "Input": "Sony S-Log3 (S-Gamut3.Cine)  (cctf on)",
+  "Output": "sRGB  (cctf on)",
+  "Created": "2026-10-12T00:09:56Z",
+  "spektrafilm": "0.3.4"
+ },
+ "gold200": {
+  "Film": "kodak_gold_200",
+  "Print": "kodak_portra_endura",
+  "Input": "Sony S-Log3 (S-Gamut3.Cine)  (cctf on)",
+  "Output": "sRGB  (cctf on)",
+  "Created": "2026-10-12T00:11:33Z",
+  "spektrafilm": "0.3.4"
+ },
+ "kodachrome64": {
+  "Film": "kodak_kodachrome_64",
+  "Print": "none (slide film, scanned)",
+  "Input": "Sony S-Log3 (S-Gamut3.Cine)",
+  "Output": "sRGB",
+  "spektrafilm": "0.3.4 (scan_film bake)"
+ },
+ "portra160": {
+  "Film": "kodak_portra_160",
+  "Print": "kodak_portra_endura",
+  "Input": "Sony S-Log3 (S-Gamut3.Cine)  (cctf on)",
+  "Output": "sRGB  (cctf on)",
+  "Created": "2026-10-12T00:09:32Z",
+  "spektrafilm": "0.3.4"
+ },
+ "portra400": {
+  "Film": "kodak_portra_400",
+  "Print": "kodak_portra_endura",
+  "Input": "Sony S-Log3 (S-Gamut3.Cine)  (cctf on)",
+  "Output": "sRGB  (cctf on)",
+  "Created": "2026-10-12T00:09:26Z",
+  "spektrafilm": "0.3.4"
+ },
+ "portra800": {
+  "Film": "kodak_portra_800",
+  "Print": "kodak_portra_endura",
+  "Input": "Sony S-Log3 (S-Gamut3.Cine)  (cctf on)",
+  "Output": "sRGB  (cctf on)",
+  "Created": "2026-10-12T00:09:39Z",
+  "spektrafilm": "0.3.4"
+ },
+ "pro400h": {
+  "Film": "fujifilm_pro_400h",
+  "Print": "fujifilm_crystal_archive_typeii",
+  "Input": "Sony S-Log3 (S-Gamut3.Cine)  (cctf on)",
+  "Output": "sRGB  (cctf on)",
+  "Created": "2026-10-12T00:10:14Z",
+  "spektrafilm": "0.3.4"
+ },
+ "provia100f": {
+  "Film": "fujifilm_provia_100f",
+  "Print": "none (slide film, scanned)",
+  "Input": "Sony S-Log3 (S-Gamut3.Cine)",
+  "Output": "sRGB",
+  "spektrafilm": "0.3.4 (scan_film bake)"
+ },
+ "superia400": {
+  "Film": "fujifilm_xtra_400",
+  "Print": "fujifilm_crystal_archive_typeii",
+  "Input": "Sony S-Log3 (S-Gamut3.Cine)  (cctf on)",
+  "Output": "sRGB  (cctf on)",
+  "Created": "2026-10-12T00:10:08Z",
+  "spektrafilm": "0.3.4"
+ },
+ "ultramax400": {
+  "Film": "kodak_ultramax_400",
+  "Print": "kodak_portra_endura",
+  "Input": "Sony S-Log3 (S-Gamut3.Cine)  (cctf on)",
+  "Output": "sRGB  (cctf on)",
+  "Created": "2026-10-12T00:11:39Z",
+  "spektrafilm": "0.3.4"
+ },
+ "velvia100": {
+  "Film": "fujifilm_velvia_100",
+  "Print": "none (slide film, scanned)",
+  "Input": "Sony S-Log3 (S-Gamut3.Cine)",
+  "Output": "sRGB",
+  "spektrafilm": "0.3.4 (scan_film bake)"
+ },
+ "vision250d": {
+  "Film": "kodak_vision3_250d",
+  "Print": "kodak_2383",
+  "Input": "Sony S-Log3 (S-Gamut3.Cine)  (cctf on)",
+  "Output": "sRGB  (cctf on)",
+  "Created": "2026-10-12T00:10:25Z",
+  "spektrafilm": "0.3.4"
+ },
+ "vision500t": {
+  "Film": "kodak_vision3_500t",
+  "Print": "kodak_2383",
+  "Input": "Sony S-Log3 (S-Gamut3.Cine)  (cctf on)",
+  "Output": "sRGB  (cctf on)",
+  "Created": "2026-10-12T00:10:19Z",
+  "spektrafilm": "0.3.4"
+ }
+}

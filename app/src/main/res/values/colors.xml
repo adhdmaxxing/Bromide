@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The window behind the app before Compose draws: the Print palette's background
+         (values-night has the Night one). -->
+    <color name="fb_background">#FFF3F2EF</color>
+</resources>

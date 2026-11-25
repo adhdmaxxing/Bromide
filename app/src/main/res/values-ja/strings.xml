@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Bromide: Japanese text (translated from values/strings.xml).
+  Film names (Kodak Portra 400…), brand and app names (Sony, Creators' App…) and
+  camera models are proper nouns: they stay as they are in every language.
+  Camera menu paths name the camera's own menus: translated only with the maker's
+  official Japanese wording; each such entry says which way it went.
+  Terms: phone = スマホ, hotspot = テザリング, grain = 粒子, warmth = 色温度,
+  tint = 色かぶり補正, slide = リバーサル, B&W = モノクロ.
+-->
+<resources>
+
+    <!-- Common -->
+    <string name="back">戻る</string>
+    <string name="cancel">キャンセル</string>
+    <string name="close">閉じる</string>
+    <string name="save">保存</string>
+    <string name="remove">削除</string>
+    <string name="change">変更</string>
+    <string name="stop">停止</string>
+    <string name="start">開始</string>
+    <string name="copy">コピー</string>
+    <string name="allow">許可</string>
+    <string name="gallery">ギャラリー</string>
+    <string name="settings">設定</string>
+    <string name="my_cameras">マイカメラ</string>
+    <string name="add_camera">カメラを追加</string>
+
+    <!-- Camera brands: the setup guide's hints for each maker -->
+    <string name="brand_other">その他のメーカー</string>
+    <string name="brand_other_app">カメラのアプリ</string>
+    <string name="brand_other_app_short">カメラアプリ</string>
+    <!-- "Creators' App（旧機種ではImaging Edge Mobile）" -->
+    <string name="brand_app_long">%1$s（%2$s）</string>
+    <string name="brand_ftp_finish">続けてFTP転送をオンにします。撮影ごとの自動送信機能があれば、それもオンにします。</string>
+    <string name="brand_sony_other_app">旧機種ではImaging Edge Mobile</string>
+    <!-- menu names: official JA -->
+    <string name="brand_sony_join_path">MENU → ネットワーク → Wi-Fi → アクセスポイント手動登録</string>
+    <!-- menu names: official JA -->
+    <string name="brand_sony_ftp_path">MENU → ネットワーク → 転送/リモート → FTP転送機能 → サーバー設定 → サーバー1</string>
+    <!-- menu names: official JA -->
+    <string name="brand_sony_auto_send">Creators\' Appで自動転送をオンにします。自動転送のない旧機種では、カメラの「スマートフォン転送」を使います。送った写真はすべて現像されます。</string>
+    <!-- menu names: official JA -->
+    <string name="brand_sony_ftp_finish">続けて「FTP転送機能」メニューで「FTP機能」と「自動FTP転送」をオンにします。</string>
+    <!-- menu names: official JA -->
+    <string name="brand_canon_ftp_path">MENU → ネットワーク → ネットワーク設定 → 接続設定 → 接続を追加して「FTP転送」を選択</string>
+    <!-- menu names: not quoted; the setting is described in plain JA (official wording unconfirmed) -->
+    <string name="brand_canon_auto_send">カメラの無線設定（またはネットワーク設定）で、撮影後にスマートフォンへ自動送信する設定をオンにし、選べる最大のサイズを選びます。</string>
+    <!-- menu names: official JA -->
+    <string name="brand_canon_ftp_finish">続けて「ネットワーク設定」→「接続オプション設定」→「FTP転送設定」で「自動転送」をオンにします。</string>
+    <!-- menu names: official JA -->
+    <string name="brand_nikon_ftp_path">ネットワークメニュー → FTPサーバー接続 → ネットワーク設定 → プロファイル作成</string>
+    <!-- menu names: official JA -->
+    <string name="brand_nikon_auto_send">SnapBridgeで「自動連携」と自動ダウンロードをオンにし、カメラが対応していればダウンロードサイズを「オリジナル」にします（初期設定は約200万画素）。</string>
+    <!-- menu names: official JA -->
+    <string name="brand_nikon_ftp_finish">続けて「FTPサーバー接続」→「オプション」で「自動送信」をオンにします。</string>
+    <string name="brand_fujifilm_other_app">旧機種ではFUJIFILM Camera Remote</string>
+    <!-- menu names: not quoted; the setting is described in plain JA (official wording unconfirmed) -->
+    <string name="brand_fujifilm_auto_send">カメラのスマートフォン（Bluetooth）設定で画像の自動転送をオンにし、フルサイズが選べる場合はそれを選びます。</string>
+    <string name="brand_panasonic_other_app">旧機種ではLUMIX Sync</string>
+    <!-- menu names: official JA -->
+    <string name="brand_panasonic_auto_send">カメラのBluetooth設定で「自動転送」をオンにします。</string>
+    <!-- menu names: official JA -->
+    <string name="brand_om_auto_send">OM Image Shareで写真を取り込みます（またはカメラで「シェア予約」を付けます）。アプリが保存した写真はすべて現像されます。</string>
+    <string name="brand_ricoh_other_app">Pentaxと旧GR機種ではImage Sync</string>
+    <string name="brand_ricoh_auto_send">機種が対応していればアプリで自動転送をオンにするか、アプリから写真を取り込みます。アプリが保存した写真はすべて現像されます。</string>
+    <string name="brand_leica_auto_send">機種が対応していればLeica FOTOSで自動読み込みをオンにするか、アプリから写真を取り込みます。</string>
+    <string name="brand_other_auto_send">アプリに自動送信機能があれば、フルサイズでオンにします。なければアプリから写真を取り込みます。アプリが保存した写真はすべて現像されます。</string>
+
+    <!-- Notifications and background work -->
+    <string name="channel_service">Bromide動作中</string>
+    <string name="channel_service_desc">Bromideがカメラからの写真を待っている間に表示されます</string>
+    <string name="channel_phone">写真の現像</string>
+    <string name="channel_phone_desc">このスマホやメモリーカードの写真をBromideが現像している間の進み具合</string>
+    <string name="service_starting">起動中…</string>
+    <string name="service_stopped">停止しました</string>
+    <string name="service_developing">現像中… %1$d枚完了、%2$d枚待ち</string>
+    <string name="service_hotspot_off">テザリングがオフです。オンにするとカメラが接続できます</string>
+    <plurals name="service_developed">
+        <item quantity="other">%1$d枚を現像しました · %2$s</item>
+    </plurals>
+    <string name="service_connected">カメラ接続中 · %1$s</string>
+    <string name="service_waiting_ftp">写真を待っています · %1$s:%2$d</string>
+    <string name="service_waiting_app">カメラアプリからの写真を待っています</string>
+    <string name="phone_notif_title">スマホの写真を現像中</string>
+    <string name="phone_notif_progress">スマホの写真を現像中 · %1$d / %2$d</string>
+    <string name="phone_notif_stopped">停止しました：スマホの写真%2$d枚中%1$d枚を現像</string>
+    <plurals name="phone_notif_done">
+        <item quantity="other">スマホの写真を%d枚現像しました</item>
+    </plurals>
+    <plurals name="phone_notif_failed">
+        <item quantity="other">%d枚を現像できませんでした</item>
+    </plurals>
+    <string name="card_notif_title">カードの写真を現像中</string>
+    <string name="card_notif_progress">カードの写真を現像中 · %1$d / %2$d</string>
+    <string name="card_notif_stopped">停止：カードの写真 %2$d 枚中 %1$d 枚を現像しました</string>
+    <plurals name="card_notif_done">
+        <item quantity="other">カードの写真を%d枚現像しました</item>
+    </plurals>
+    <string name="batch_done_where">保存先：%1$s</string>
+    <string name="batch_busy_card">メモリーカードを現像中です。終わるとスマホの写真を現像できます。</string>
+    <string name="batch_busy_phone">スマホの写真を現像中です。終わるとカードを現像できます。</string>
+
+    <!-- Errors -->
+    <!-- "DSC01234.ARW: <technical reason>" -->
+    <string name="error_named">%1$s: %2$s</string>
+    <string name="error_no_raw">このスマホはRAWに対応していません</string>
+    <string name="error_read_photo">写真を読み込めませんでした</string>
+    <string name="error_no_camera">待ち受けるカメラがありません。設定 → マイカメラで追加してください。</string>
+    <string name="error_port">ポート%1$dで開始できませんでした：%2$s</string>
+    <string name="error_no_raw_camera">このスマホはRAWファイルをデコードできません。カメラからJPEGを送ってください。</string>
+    <string name="error_develop">%1$sを現像できませんでした：%2$s</string>
+    <string name="error_start_phone">現像を開始できませんでした：%1$s</string>
+
+    <!-- Settings choices -->
+    <string name="preview_portrait">ポートレート</string>
+    <string name="preview_dusk">夕暮れ</string>
+    <string name="preview_still">静物</string>
+    <string name="preview_last_photo">直近の写真</string>
+    <string name="source_auto">RAWがあればRAW（最高画質）</string>
+    <string name="source_auto_desc">RAW+JPEGの場合は、まずJPEGが表示され、あとからRAW版に置き換わります。JPEGのみのカメラでも使えます。</string>
+    <string name="source_jpeg">JPEGのみ（高速）</string>
+    <string name="source_jpeg_desc">RAWファイルは無視します。転送量が少なく仕上がりも速いですが、ハイライトとシャドウの階調は減ります。</string>
+    <string name="size_full">フルサイズ</string>
+    <string name="size_half">ハーフサイズ</string>
+    <string name="size_2048">2048 px</string>
+    <string name="size_3000">3000 px</string>
+    <string name="size_full_short">フル</string>
+
+    <!-- Films: names stay as they are; this is each one's character -->
+    <string name="category_color">カラー</string>
+    <string name="category_bw">モノクロ</string>
+    <string name="category_slide">リバーサル</string>
+    <string name="category_cinema">シネマ</string>
+    <string name="stock_unknown"></string>
+    <string name="stock_portra400">やわらかなコントラスト、自然な肌、穏やかな色</string>
+    <string name="stock_portra160">400より粒子が細かく、少しクリーン</string>
+    <string name="stock_portra800">暗所向けのPortra。より暖かく、粒子も多め</string>
+    <string name="stock_gold200">暖かく晴れやかな、懐かしい定番カラーネガ</string>
+    <string name="stock_ultramax400">パンチのある普段使いの色、はっきりした粒子</string>
+    <string name="stock_ektar100">高彩度・微粒子、鮮やかな風景に</string>
+    <string name="stock_c200">涼しげな緑、Fujiらしい定番の写り</string>
+    <string name="stock_superia400">Fujiらしい緑とマゼンタ、ざらついた質感</string>
+    <string name="stock_pro400h">軽やかなパステル、シアン寄りのシャドウ</string>
+    <string name="stock_vision250d">デイライト用の映画フィルム、2383プリント</string>
+    <string name="stock_vision500t">タングステン用の映画フィルム：昼は青く、夜は豊かに</string>
+    <string name="stock_cinestill800t">rem-jetを除いた500T：光のまわりに赤いにじみ</string>
+    <string name="stock_provia100f">ニュートラルでクリーンなリバーサル</string>
+    <string name="stock_velvia100">濃厚で高彩度なリバーサル</string>
+    <string name="stock_ektachrome100">シャープでやや寒色寄りのリバーサル</string>
+    <string name="stock_kodachrome64">伝説のリバーサル、暖かな赤</string>
+    <string name="stock_trix400">ざらついた定番モノクロ、深い黒</string>
+    <string name="stock_hp5">ラチチュードが広く、やわらかなコントラスト、色あせない粒子</string>
+    <string name="stock_tmax100">シャープで微粒子、現代的なモノクロ</string>
+    <string name="stock_delta3200">夜のフィルム：大きな粒子、ムードのある低コントラスト</string>
+    <string name="stock_panf50">超微粒子、力強いコントラスト</string>
+    <string name="stock_acros100">なめらかで絹のような階調、ごく細かい粒子</string>
+    <string name="stock_sfx200">赤感度拡張：暗く沈む空、白く輝く葉</string>
+
+    <!-- Film cards and the film library -->
+    <!-- Edge print on the selected film card -->
+    <string name="card_loaded">装填中</string>
+    <string name="card_chosen">選択中</string>
+    <string name="card_tweaked">調整済み</string>
+    <string name="favorite_add">お気に入りに追加</string>
+    <string name="favorite_remove">お気に入りから削除</string>
+    <string name="adjust_film">%1$sを調整</string>
+    <string name="films">フィルム</string>
+    <string name="films_search">検索：portra、モノクロ、400、リバーサル…</string>
+    <string name="clear">クリア</string>
+    <string name="filter_all">すべて</string>
+    <string name="filter_favorites">お気に入り</string>
+    <string name="filter_camera">カメラ</string>
+    <string name="filter_phone">スマホ</string>
+    <string name="films_no_favorites">お気に入りはまだありません。フィルムのハートをタップすると追加できます。</string>
+    <string name="films_none">一致するフィルムはありません。</string>
+
+    <!-- Gallery -->
+    <plurals name="gallery_count">
+        <item quantity="other">%d枚</item>
+    </plurals>
+    <string name="gallery_develop_phone">スマホの写真を現像</string>
+    <string name="develop_from_card">カードから現像</string>
+    <string name="gallery_empty">現像した写真はここに表示されます。</string>
+    <string name="gallery_empty_phone">このスマホから現像した写真はここに表示されます。</string>
+    <string name="share">共有</string>
+    <string name="delete">削除</string>
+    <string name="share_photo">写真を共有</string>
+    <!-- My cameras -->
+    <string name="cameras_intro">Bromideはすべてのカメラを同時に待ち受け、メーカーと機種で写真を見分けます。</string>
+    <string name="cameras_none">カメラはまだありません。</string>
+    <string name="camera_name">カメラ名</string>
+    <string name="camera_film_for">%1$sのフィルム</string>
+    <string name="camera_film_home">ホーム画面で選んだフィルム</string>
+    <string name="camera_film_home_short">ホーム画面で選んだもの</string>
+    <string name="camera_remove_title">%1$sを削除しますか？</string>
+    <string name="camera_remove_text">Bromideはこのカメラの待ち受けをやめます。現像済みの写真はギャラリーに残ります。</string>
+    <string name="camera_sends">送信方法</string>
+    <string name="camera_sends_ftp">Wi-FiでBromideへ直接（FTP）</string>
+    <string name="camera_sends_app_other">カメラのアプリ経由</string>
+    <!-- "Creators' App経由" -->
+    <string name="camera_sends_app">%1$s経由</string>
+    <string name="camera_sends_card">メモリーカードから</string>
+    <string name="camera_film">フィルム</string>
+    <string name="rename">名前を変更</string>
+    <string name="setup_guide">設定ガイド</string>
+    <!-- Default camera name for "another brand" -->
+    <string name="camera_default_name">マイカメラ</string>
+
+    <!-- Settings -->
+    <string name="settings_camera">カメラ</string>
+    <string name="settings_my_cameras">マイカメラ（%1$d）</string>
+    <string name="settings_autostart">自動で開始</string>
+    <string name="settings_autostart_desc">Bromideを開いたときに開始します（FTPカメラはテザリングのオンも必要です）</string>
+    <string name="settings_per_film">粒子、ハレーション、色、露出はフィルムごとに設定します。ホーム画面の下にある「フィルムを調整」をタップしてください。</string>
+    <string name="settings_camera_files">カメラのファイル</string>
+    <string name="settings_from_card">メモリーカードから現像…</string>
+    <string name="settings_saved">保存する写真</string>
+    <string name="settings_size">スマホに保存するサイズ</string>
+    <string name="settings_size_desc">元データはカメラのカードに残ります。写真ごとにレシピが記録されるので、あとでカードからフルサイズ版を作り直せます。</string>
+    <string name="settings_ftp">FTP接続</string>
+    <string name="settings_password">パスワードを要求</string>
+    <string name="settings_password_desc">オフ：カメラはどんなパスワードでも送信できます（自分のテザリングなら問題ありません）</string>
+    <string name="settings_ftp_password">FTPパスワード</string>
+    <string name="settings_port">ポート</string>
+    <string name="settings_ftp_apply">接続の変更は、次にBromideが受信を開始したときに反映されます。</string>
+    <string name="settings_about">このアプリについて</string>
+    <string name="settings_credits">カラーフィルムのモデリングには、Andrea Volpatoによるspektrafilmを使用しています。メーカーのデータシートをもとに実在のフィルムを再現したスペクトルシミュレーションです（フィルムLUTはCC BY-SA 4.0）。モノクロフィルムはBromide独自のモデルです。RAWデコードはLibRaw（CDDL-1.0）。サンプル画像：NASA、SpaceX（パブリックドメイン）、Rachel Michetti（CC0）。書体：TeX Gyre Heros（GUST Font License）。フィルム名は各所有者の商標です。Bromideはこれらの企業と提携していません。</string>
+    <string name="settings_gpl">BromideはGNU GPL v3のフリーソフトウェアです。ソースコードを読み、改変し、共有できます。広告もアカウントも分析もなく、写真がスマホの外に出ることはありません。</string>
+    <string name="source_code">ソースコード</string>
+    <string name="privacy">プライバシー</string>
+    <!-- One film and its settings -->
+    <string name="favorite">お気に入り</string>
+    <!-- On the preview: hold to see the photo without film -->
+    <string name="film_original">オリジナル</string>
+    <string name="film_hold_compare">長押しで比較</string>
+    <string name="film_zoom_hint">ピンチまたはダブルタップで拡大すると、粒子を確認できます。</string>
+    <string name="film_about_bw">モノクロフィルムは、Bromide独自のネガと印画紙のモデルです。</string>
+    <string name="film_about_color">色と階調は、このフィルムのデータシートをもとにしたspektrafilmのシミュレーションで、ラボと同じようにプリントしています。</string>
+    <string name="film_reset_all">すべてリセット</string>
+    <string name="film_saved">このフィルムに保存され、次にこのフィルムで撮る写真に使われます。値をタップするとリセットできます。</string>
+    <string name="film_saved_phone">このフィルムに保存されるので、カメラでこのフィルムを使うときにも適用されます。値をタップするとリセットできます。</string>
+    <string name="film_chosen_phone">スマホの写真用に選択中</string>
+    <string name="film_use_phone">このスマホの写真に使う</string>
+    <string name="film_loaded">カメラに装填中</string>
+    <string name="film_use">このフィルムを使う</string>
+    <string name="look_grain">粒子</string>
+    <string name="look_amount">量</string>
+    <string name="look_size">サイズ</string>
+    <string name="look_light">光</string>
+    <string name="look_exposure">露出</string>
+    <string name="look_halation">ハレーション</string>
+    <string name="look_halation_hint">光源のまわりの赤いにじみ。CineStillのように、ハレーション防止層のないフィルムで最も強く出ます。</string>
+    <string name="look_color_group">色</string>
+    <!-- A colored filter on the lens, for black & white films -->
+    <string name="look_filter">フィルター</string>
+    <string name="look_filter_hint">レンズに付けるフィルターと同じく、オレンジは青空を暗く、ブルーは明るくします。</string>
+    <!-- Saturation -->
+    <string name="look_color">彩度</string>
+    <string name="look_warmth">色温度</string>
+    <string name="look_tint">色かぶり補正</string>
+    <string name="look_lab">ラボ</string>
+    <string name="look_auto_print">自動プリント</string>
+    <string name="look_lab_hint">写真ラボのプリンターのように露出をそろえます。オフにすると撮ったままプリントします。</string>
+    <string name="look_orange">オレンジ</string>
+    <string name="look_blue">ブルー</string>
+    <string name="look_warm">暖色</string>
+    <string name="look_cool">寒色</string>
+    <string name="look_magenta">マゼンタ</string>
+    <string name="look_green">グリーン</string>
+    <string name="look_neutral">ニュートラル</string>
+    <!-- "暖色 +0.30" -->
+    <string name="value_signed">%1$s %2$+.2f</string>
+    <string name="value_off">オフ</string>
+    <string name="value_times">%1$.1f×</string>
+    <string name="value_ev">%1$+.1f EV</string>
+    <string name="value_percent">%1$.0f%%</string>
+    <!-- Grain size: the film's own, finer, coarser -->
+    <string name="grain_stock">標準</string>
+    <string name="grain_fine">細かい %1$.1f×</string>
+    <string name="grain_coarse">粗い %1$.1f×</string>
+    <!-- One-line summary of a film's settings -->
+    <string name="summary_no_grain">粒子なし</string>
+    <string name="summary_grain">粒子 %1$.1f×</string>
+    <string name="summary_grain_size">粒子サイズ %1$s</string>
+    <string name="summary_no_halation">ハレーションなし</string>
+    <string name="summary_halation">ハレーション %1$.1f×</string>
+    <string name="summary_color">彩度 %1$.1f×</string>
+    <string name="summary_lab_off">ラボ オフ</string>
+    <string name="summary_lab">ラボ %1$.0f%%</string>
+    <string name="summary_stock">%1$d · 標準設定</string>
+    <!-- Phone photos -->
+    <string name="phone_title">スマホの写真</string>
+    <string name="phone_choose_others">別の写真を選ぶ</string>
+    <string name="phone_intro">このスマホで撮った写真を、フィルムで現像します。ライブラリから選ぶと、Bromideはフィルム版のコピーを保存し、元の写真はそのまま残します。</string>
+    <string name="phone_choose">写真を選ぶ</string>
+    <!-- %1$s is a folder, Pictures/Bromide/Phone -->
+    <string name="phone_where">現像したコピーは、カメラの写真とは別に%1$sに保存されます。</string>
+    <plurals name="phone_picked">
+        <item quantity="other">%d枚を選択</item>
+    </plurals>
+    <string name="phone_film_separate">カメラ用とは別</string>
+    <string name="adjust">調整</string>
+    <string name="home_adjust_film">フィルムを調整</string>
+    <string name="phone_size_full">スマホで撮ったままの大きさ。%1$sに保存されます。</string>
+    <string name="phone_size_half">幅と高さが半分になり、約4倍速く現像できます。%1$sに保存されます。</string>
+    <string name="phone_size_share">どこでも共有しやすい小さめのサイズで、いちばん速く仕上がります。%1$sに保存されます。</string>
+    <string name="phone_develop_one">この写真を現像</string>
+    <plurals name="develop_n">
+        <item quantity="other">%d枚を現像</item>
+    </plurals>
+    <!-- "3 / 12" -->
+    <string name="progress_of">%1$d / %2$d</string>
+    <string name="phone_background">バックグラウンドで動作します。Bromideを閉じても、進み具合は通知で確認できます。</string>
+    <string name="phone_developed">%1$d枚を現像しました</string>
+    <!-- Develop from a memory card -->
+    <string name="card_intro">USB-Cカードリーダーで、カメラのカードをスマホにつなぎます。Bromideは元データをフル画質で（RAWがあればRAWから）、スマホで使ったのと同じフィルムで現像します。</string>
+    <string name="card_no_raw">このスマホはRAWファイルをデコードできないため、JPEGのみ現像します。</string>
+    <string name="card_choose">カードのDCIMフォルダを選ぶ</string>
+    <string name="card_choose_other">別のフォルダを選ぶ</string>
+    <string name="card_scanning">写真を探しています…</string>
+    <plurals name="card_found">
+        <item quantity="other">%1$d枚の写真が見つかりました（RAW %2$d枚、JPEGのみ %3$d枚）</item>
+    </plurals>
+    <string name="card_same_film">スマホと同じフィルム</string>
+    <string name="card_same_film_desc">このうち%1$d枚はこのスマホで現像済みです</string>
+    <string name="card_one_film">すべて同じフィルム</string>
+    <string name="card_one_film_desc">すべての写真を同じフィルムで現像します</string>
+    <string name="card_saved_to">%1$sに保存されます。</string>
+    <string name="card_nothing">現像する写真がありません</string>
+    <plurals name="card_done">
+        <item quantity="other">完了：%d枚を現像しました。</item>
+    </plurals>
+    <!-- Home -->
+    <string name="home_all_films">全%1$d種のフィルム</string>
+    <string name="home_card_title">カードから現像</string>
+    <string name="home_card_text">USB-Cカードリーダーで、カメラのカードをこのスマホにつなぎます。</string>
+    <string name="home_add_wifi_camera">Wi-Fi対応カメラを追加</string>
+    <string name="home_setup_title">カメラを設定しましょう</string>
+    <string name="home_setup_text">使っているカメラをBromideに教えてください。最初に一度だけ、数分で終わります。</string>
+    <string name="home_setup_button">カメラを設定</string>
+    <string name="hotspot_off">テザリングがオフです</string>
+    <string name="home_hotspot_text">カメラはスマホのテザリング経由で接続します。オンにすれば、Bromideの準備は完了です。</string>
+    <string name="home_hotspot_text_running">カメラはスマホのテザリング経由で接続します。オンにすると、Bromideがすぐにカメラを見つけます。</string>
+    <string name="home_turn_on_hotspot">テザリングをオン</string>
+    <string name="turn_on">オンにする</string>
+    <string name="home_ready">準備OK</string>
+    <string name="home_tap_start">「開始」をタップして、撮影しましょう。</string>
+    <string name="home_will_ask_photos">カメラアプリが保存した写真を取り込むため、Bromideが写真へのアクセスを求めます。</string>
+    <string name="developing">現像中…</string>
+    <string name="home_connected">カメラ接続中</string>
+    <string name="home_waiting">写真を待っています</string>
+    <string name="home_developed_session">今回%1$d枚を現像</string>
+    <string name="home_in_queue">%1$d枚待ち</string>
+    <string name="home_take_picture">撮影すると、数秒でここに表示されます。</string>
+    <!-- "カメラのホスト：192.168.43.1 · ポート 2121" -->
+    <string name="home_camera_host">カメラのホスト：%1$s · ポート %2$d</string>
+    <string name="home_take_picture_app">撮影して、カメラアプリから送信してください。</string>
+    <string name="home_hotspot_notice">オンにするまで、FTPカメラは接続できません。</string>
+    <string name="home_host_changed">テザリングのアドレスが変わりました</string>
+    <string name="home_host_changed_text">カメラのFTPホストを%1$sに設定してください（以前は%2$s）。</string>
+    <string name="home_no_photo_access">Bromideが写真にアクセスできません</string>
+    <string name="home_no_photo_access_text">カメラアプリが保存した写真を取り込むために必要です。</string>
+    <string name="home_partial_access">Bromideは選んだ写真しか見られません</string>
+    <string name="home_partial_access_text">カメラアプリが保存した新しい写真を現像するには、Bromideの設定で「すべて許可」を選んでください。</string>
+    <string name="home_phone_entry">このスマホで撮った写真を現像</string>
+    <string name="home_just_developed">現像したて</string>
+    <string name="from_raw">RAWから</string>
+    <string name="from_jpeg">JPEGから</string>
+    <string name="home_preview_on">プレビュー：</string>
+    <!-- Camera setup guide -->
+    <string name="next">次へ</string>
+    <string name="done">完了</string>
+    <string name="onboard_lets_go">はじめる</string>
+    <string name="onboard_waiting_hotspot">テザリングを待っています…</string>
+    <string name="onboard_camera_joined">カメラが接続されました</string>
+    <string name="onboard_waiting_camera">カメラを待っています…</string>
+    <string name="onboard_allow_photos">写真へのアクセスを許可</string>
+    <string name="onboard_start_shooting">撮影を始める</string>
+    <string name="onboard_waiting_photo">写真を待っています…</string>
+    <string name="onboard_phone_only">今はこのスマホの写真だけ</string>
+    <string name="onboard_skip_check">この確認をスキップ</string>
+    <string name="onboard_card_now">今すぐカードを現像</string>
+    <string name="onboard_finish_no_test">テスト撮影せずに完了</string>
+    <string name="onboard_welcome_title">カメラから直接、本物のフィルムの写りを。</string>
+    <string name="onboard_welcome_text">カメラが写真を1枚ずつこのスマホに送ります。Bromideはそれを本物のフィルムと同じように現像し、シャッターを切って数秒後にはギャラリーに保存します。</string>
+    <string name="onboard_welcome_need">設定は最初に一度だけ、数分で終わります。必要なもの：</string>
+    <string name="onboard_welcome_camera">カメラ。Wi-FiかBluetoothを搭載したカメラなら、メーカーを問わずほとんど使えます。</string>
+    <string name="onboard_welcome_no_wifi">Wi-Fiがなくても、メモリーカードから写真を現像できます。</string>
+    <string name="onboard_welcome_no_camera">カメラが手元にない場合も、このスマホで撮った写真をBromideで現像できます。</string>
+    <!-- Small labels above each step's title -->
+    <string name="onboard_kicker_camera">カメラ</string>
+    <string name="onboard_kicker_wifi">Wi-Fi</string>
+    <string name="onboard_kicker_app">カメラアプリ</string>
+    <string name="onboard_kicker_card">メモリーカード</string>
+    <string name="onboard_kicker_test">テスト</string>
+    <string name="onboard_brand_title">どのカメラで撮っていますか？</string>
+    <string name="onboard_brand_text">そのカメラに合った手順を表示します。カメラはあとから追加できます。</string>
+    <string name="onboard_method_title">写真の送り方は？</string>
+    <string name="onboard_tag_most">ほとんどのカメラ</string>
+    <string name="onboard_method_app">Wi-FiかBluetoothがあれば、ほぼどのカメラでも使えます。アプリがスマホで写真を受け取り、Bromideがそれを1枚ずつ現像します。</string>
+    <string name="onboard_method_ftp_title">Bromideへ直接（FTP）</string>
+    <string name="onboard_tag_fastest">最速 · RAW</string>
+    <!-- %1$s: camera models, "a7 IV, a7S III, a1" -->
+    <string name="onboard_method_ftp_examples">アプリを介さず、RAWファイルも届きます。%1$sなど、FTPアップロードに対応したカメラのみ。</string>
+    <string name="onboard_method_ftp_few">アプリを介さず、RAWファイルも届きます。FTPアップロードに対応したカメラのみで、%1$sの対応機種はわずかです。</string>
+    <string name="onboard_tag_no_wifi">Wi-Fiなし</string>
+    <string name="onboard_method_card">撮影後、USB-Cカードリーダーでカードをこのスマホにつなぎます。フルサイズで、RAWにも対応。</string>
+    <string name="onboard_method_not_sure">わからない場合は、カメラのネットワークメニューに「FTP」があるか確認してください。なければアプリを使いましょう。</string>
+    <string name="onboard_hotspot_title">テザリングをオンにする</string>
+    <string name="onboard_hotspot_text">カメラはスマホのテザリングに接続します。インターネット接続は不要です。</string>
+    <string name="onboard_open_hotspot">テザリング設定を開く</string>
+    <string name="onboard_hotspot_tip">ヒント：テザリングのネットワーク名とパスワードはシンプルにしておきましょう。カメラで一度入力します。</string>
+    <string name="onboard_hotspot_on">テザリングがオンです</string>
+    <string name="onboard_join_title">カメラを接続する</string>
+    <string name="onboard_join_text">カメラで、ほかのWi-Fiネットワークと同じようにスマホのテザリングに接続します。</string>
+    <string name="onboard_join_generic">カメラのネットワークまたはWi-Fiのメニューを探してください。カメラによっては、次の手順のFTP設定の中でネットワークを選びます。</string>
+    <string name="onboard_join_pick">テザリングのネットワーク名を選び、パスワードを入力します。</string>
+    <string name="onboard_ftp_title">写真の送り先をカメラに設定する</string>
+    <string name="onboard_menu_vary">メニュー名は機種によって少し異なります。</string>
+    <string name="onboard_ftp_generic">カメラのネットワークメニューで、FTPサーバーを追加します（「FTP転送」や「FTPアップロード」という名前の場合もあります）。</string>
+    <string name="onboard_ftp_enter">次の値を入力します：</string>
+    <string name="onboard_ftp_host">ホスト名 / サーバーアドレス</string>
+    <string name="onboard_ftp_user_label">ユーザー名</string>
+    <string name="onboard_ftp_password">パスワード</string>
+    <string name="onboard_ftp_and_set">さらに次のように設定します：</string>
+    <string name="onboard_ftp_passive">パッシブモード：オン</string>
+    <string name="onboard_ftp_secure">セキュアプロトコル（FTPS/SFTP）：オフ</string>
+    <!-- %1$s is the FTP user name, "film" -->
+    <string name="onboard_ftp_user">ユーザー：%1$s   ·   パスワード：何でも可（例：film）</string>
+    <string name="onboard_ftp_raw">RAW+JPEGで撮影していますか？ 最高画質にするには両方を送ってください。まずJPEGが表示され、あとからRAW版に置き換わります。JPEGだけを送っても使え、そのほうが速く仕上がります。</string>
+    <string name="onboard_waiting_connect">カメラの接続を待っています…</string>
+    <string name="onboard_starting">Bromideを起動しています…</string>
+    <string name="onboard_access_title">新しい写真へのアクセスを許可</string>
+    <string name="onboard_access_text">%1$sは受け取った写真をこのスマホに保存します。Bromideが現像するには、その写真へのアクセスが必要です。</string>
+    <string name="onboard_access_text_other">カメラのアプリは受け取った写真をこのスマホに保存します。Bromideが現像するには、その写真へのアクセスが必要です。</string>
+    <!-- %1$s is a brand, "Sony" -->
+    <string name="onboard_access_only">取り込むのは%1$sのカメラで撮った写真だけです。スマホで撮った写真やスクリーンショットには触れず、元の写真もアプリが保存した場所に残ります。</string>
+    <string name="onboard_access_only_other">取り込むのはカメラで撮った写真だけです。スマホで撮った写真やスクリーンショットには触れず、元の写真もアプリが保存した場所に残ります。</string>
+    <string name="onboard_access_ok">Bromideが新しい写真にアクセスできます</string>
+    <string name="onboard_access_partial">Bromideはまだ写真にアクセスできません。Androidで「写真と動画を選択」が表示された場合は、代わりに「すべて許可」を選んでください。そうしないと、Bromideは新しい写真を見られません。</string>
+    <string name="onboard_open_app_settings">Bromideのアプリ設定を開く</string>
+    <string name="onboard_pair_title">カメラを%1$sとペアリング</string>
+    <string name="onboard_pair_title_other">カメラをアプリとペアリング</string>
+    <string name="onboard_pair_install">%1$sをインストールし、カメラをペアリングしてください。手順はアプリが案内します。</string>
+    <string name="onboard_pair_install_other">カメラメーカーのアプリをインストールし、カメラをペアリングしてください。手順はアプリが案内します。</string>
+    <string name="onboard_find_app">Google Playで%1$sを探す</string>
+    <string name="onboard_pair_size">アプリで選べる最大の写真サイズを選んでください。小さいコピー（多くは約200万画素）でも使えますが、現像すると甘く見えます。</string>
+    <string name="onboard_pair_keep">Bromideは起動したままにしてください（通知が表示されます）。カメラアプリはバックグラウンドのままで大丈夫です。</string>
+    <string name="onboard_card_title">カードから現像</string>
+    <string name="onboard_card_text">撮影後、このスマホにつないだUSB-Cカードリーダーにカードを挿し、Bromideの設定で「メモリーカードから現像」を開きます。</string>
+    <string name="onboard_card_text2">Bromideは選んだフィルムで、すべての写真をフルサイズで現像します（RAWも対応）。</string>
+    <string name="onboard_card_later">あとでカメラがWi-Fiに対応したら（またはWi-Fi対応のカメラを手に入れたら）、設定 → マイカメラで追加してください。</string>
+    <string name="onboard_it_works">成功です！</string>
+    <string name="onboard_take_photo">写真を撮る</string>
+    <string name="onboard_developed_as">%1$sで現像しました。</string>
+    <string name="onboard_from_now_ftp">これからは、テザリングをオンにしてBromideを開き、撮影するだけです。</string>
+    <!-- %1$s: film codes, "portra400, portra160, portra800, gold200" -->
+    <string name="onboard_tip_ftp_film">ヒント：カメラからフィルムを切り替えるには、フィルムごとにFTPサーバーを追加し、ユーザー名にフィルムのコードを使います（%1$s…）。</string>
+    <string name="onboard_from_now_app">これからは、Bromideを開いて撮影し、アプリに写真を送らせるだけです。</string>
+    <string name="onboard_tip_camera_film">ヒント：設定 → マイカメラで、カメラごとに別のフィルムを設定できます。</string>
+    <string name="onboard_press_shutter">シャッターを押してください。数秒後に写真がここに届きます。</string>
+    <string name="onboard_send_from_app">写真を撮るか、アプリから送信してください。アプリがスマホに保存すると、Bromideがここで現像します。</string>
+    <string name="onboard_nothing_yet">まだ届きませんか？ アプリのギャラリーを開いて、写真がスマホに届いているか確認してください。Bromideが取り込むのは、ここでカメラを追加したあとに%1$sのカメラで撮った写真です。</string>
+    <string name="onboard_nothing_yet_other">まだ届きませんか？ アプリのギャラリーを開いて、写真がスマホに届いているか確認してください。Bromideが取り込むのは、ここでカメラを追加したあとにそのカメラで撮った写真です。</string>
+    <string name="skip">スキップ</string>
+
+    <string name="roll_title">無料フィルム</string>
+    <plurals name="roll_left_of">
+        <item quantity="other">枚 残り（全%1$d枚）</item>
+    </plurals>
+    <plurals name="roll_strip_desc">
+        <item quantity="other">無料フィルム 残り%1$d枚（全%2$d枚）</item>
+    </plurals>
+    <string name="roll_phone_free">このスマホで撮った写真はいつでも無料です。</string>
+    <string name="roll_unlock">ロック解除</string>
+    <string name="roll_unlock_price">ロック解除 · %1$s</string>
+    <string name="roll_unlock_full">Bromideのロックを解除</string>
+    <string name="roll_finished">無料フィルムを撮り終えました</string>
+    <string name="roll_finished_text">カメラの写真の現像を続けるには、Bromideのロックを解除してください。</string>
+    <plurals name="roll_waiting">
+        <item quantity="other">%1$d枚の写真が現像を待っています。ロックを解除すると、すぐに現像されます。</item>
+    </plurals>
+    <string name="roll_terms">お支払いは一度だけ。すべてのフィルムをずっと使えます。このスマホで撮った写真は引き続き無料です。</string>
+    <string name="roll_pending">お支払いの確認待ちです。確認が済みしだいロックが解除されます。</string>
+    <string name="roll_unavailable">現在Google Playに接続できません。しばらくしてからもう一度お試しください。</string>
+    <string name="roll_notif_left">無料フィルム 残り%1$d枚（全%2$d枚）</string>
+    <plurals name="roll_notif_waiting">
+        <item quantity="other">無料フィルム終了 · %1$d枚が現像待ち</item>
+    </plurals>
+    <plurals name="roll_card_new">
+        <item quantity="other">このうち%1$d枚は新しい写真で、1枚ごとに無料フィルムを1コマ使います（残り%2$d枚）。</item>
+    </plurals>
+    <plurals name="roll_not_developed">
+        <item quantity="other">無料フィルム終了：%1$d枚は現像されていません</item>
+    </plurals>
+    <plurals name="roll_left_settings">
+        <item quantity="other">無料フィルム：残り%1$d枚（全%2$d枚）</item>
+    </plurals>
+    <string name="latent_notif_title">現像待ちの写真を現像中</string>
+    <string name="latent_notif_progress">現像待ちの写真を現像中 · %1$d / %2$d</string>
+    <string name="latent_notif_stopped">停止しました：現像待ちの写真%2$d枚中%1$d枚を現像</string>
+    <plurals name="latent_notif_done">
+        <item quantity="other">現像待ちの写真を%d枚現像しました</item>
+    </plurals>
+    <string name="settings_unlock">ロック解除</string>
+    <string name="settings_unlocked">ロック解除済み。Bromideを応援していただき、ありがとうございます！</string>
+    <string name="settings_founder">アーリーユーザー特典：Bromideはずっと無料です。いち早く使っていただき、ありがとうございます！</string>
+    <string name="settings_founder_support">お支払いは不要です。それでもBromideを応援したい方は、ロック解除を購入できます。</string>
+    <string name="settings_support">Bromideを応援する</string>
+    <string name="settings_support_price">Bromideを応援する · %1$s</string>
+    <string name="settings_restore">購入を復元</string>
+    <string name="settings_restoring">Google Playで確認しています…</string>
+    <plurals name="settings_latent">
+        <item quantity="other">%1$d枚の写真が、ロック解除後の現像を待っています。</item>
+    </plurals>
+    <string name="settings_discard_latent">現像待ちの写真を削除</string>
+</resources>

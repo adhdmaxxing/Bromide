@@ -1,0 +1,4 @@
+Preview sample images (from the scikit-image sample data):
+- portrait.jpg: astronaut Eileen Collins, NASA Great Images database. Public domain.
+- dusk.jpg: Falcon 9 / DSCOVR launch, SpaceX. Released into the public domain.
+- still.jpg: coffee cup, photo by Rachel Michetti, courtesy of Pikolo Espresso Bar. CC0.

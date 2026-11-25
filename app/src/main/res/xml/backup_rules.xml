@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android 11 and older: same rules as data_extraction_rules.xml. -->
+<full-backup-content>
+    <exclude domain="file" path="inbox/" />
+    <exclude domain="file" path="latent/" />
+    <exclude domain="file" path="preview_last.jpg" />
+</full-backup-content>

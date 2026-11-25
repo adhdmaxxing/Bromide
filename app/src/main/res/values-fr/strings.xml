@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Bromide's text in French. See values/strings.xml for the notes on proper nouns
+  and camera menu paths.
+  Conventions: "vous"; typographic apostrophe ’; no-break space before : ; ? ! %;
+  camera = "appareil", film stock = "film" in labels, "pellicule" in prose;
+  hotspot = "point d’accès".
+-->
+<resources>
+
+    <!-- Common -->
+    <string name="back">Retour</string>
+    <string name="cancel">Annuler</string>
+    <string name="close">Fermer</string>
+    <string name="save">Enregistrer</string>
+    <string name="remove">Retirer</string>
+    <string name="change">Modifier</string>
+    <string name="stop">Arrêter</string>
+    <string name="start">Démarrer</string>
+    <string name="copy">Copier</string>
+    <string name="allow">Autoriser</string>
+    <string name="gallery">Galerie</string>
+    <string name="settings">Paramètres</string>
+    <string name="my_cameras">Mes appareils</string>
+    <string name="add_camera">Ajouter un appareil</string>
+
+    <!-- Camera brands: the setup guide's hints for each maker -->
+    <string name="brand_other">Autre marque</string>
+    <string name="brand_other_app">l’application de votre appareil</string>
+    <string name="brand_other_app_short">appli de l’appareil</string>
+    <!-- "Creators' App (Imaging Edge Mobile sur les modèles plus anciens)" -->
+    <string name="brand_app_long">%1$s (%2$s)</string>
+    <string name="brand_ftp_finish">Activez ensuite le transfert FTP, et l’envoi automatique après chaque prise de vue si votre appareil le propose.</string>
+    <string name="brand_sony_other_app">Imaging Edge Mobile sur les modèles plus anciens</string>
+    <!-- menu names kept in English -->
+    <string name="brand_sony_join_path">MENU → Network → Wi-Fi → Access Point Set.</string>
+    <!-- menu names kept in English -->
+    <string name="brand_sony_ftp_path">MENU → Network → Transfer/Remote → FTP Transfer Func. → Server Setting → Server 1</string>
+    <!-- menu names kept in English -->
+    <string name="brand_sony_auto_send">Dans Creators\' App, activez le transfert automatique. Sur les modèles plus anciens qui ne l’ont pas, utilisez « Send to Smartphone » sur l’appareil : chaque photo envoyée est développée.</string>
+    <!-- menu names kept in English -->
+    <string name="brand_sony_ftp_finish">Puis, dans le menu « FTP Transfer », activez « FTP Function » et « Auto FTP Transfer ».</string>
+    <!-- menu names kept in English -->
+    <string name="brand_canon_ftp_path">MENU → Network → Network settings → Connection settings → ajoutez une connexion et choisissez « FTP transfer »</string>
+    <!-- menu names kept in English -->
+    <string name="brand_canon_auto_send">Sur l’appareil, activez « Send to smartphone after shot » (dans les réglages sans fil ou réseau) et choisissez la plus grande taille proposée.</string>
+    <!-- menu names kept in English -->
+    <string name="brand_canon_ftp_finish">Puis, dans Network settings → Connection option settings → FTP transfer settings, activez « Automatic transfer ».</string>
+    <!-- menu names kept in English -->
+    <string name="brand_nikon_ftp_path">Network menu → Connect to FTP server → Network settings → Create profile</string>
+    <!-- menu names kept in English -->
+    <string name="brand_nikon_auto_send">Dans SnapBridge, activez « Auto link » et le téléchargement automatique, et réglez la taille de téléchargement sur « Original » si votre appareil le propose (2 Mpx par défaut).</string>
+    <!-- menu names kept in English -->
+    <string name="brand_nikon_ftp_finish">Puis, dans Connect to FTP server → Options, activez « Auto upload ».</string>
+    <string name="brand_fujifilm_other_app">FUJIFILM Camera Remote sur les modèles plus anciens</string>
+    <string name="brand_fujifilm_auto_send">Dans les réglages smartphone (Bluetooth) de l’appareil, activez le transfert automatique des images, et choisissez la pleine taille si elle est proposée.</string>
+    <string name="brand_panasonic_other_app">LUMIX Sync sur les modèles plus anciens</string>
+    <!-- menu names kept in English -->
+    <string name="brand_panasonic_auto_send">Sur l’appareil, activez « Auto Transfer » dans les réglages Bluetooth.</string>
+    <!-- menu names kept in English -->
+    <string name="brand_om_auto_send">Importez les photos avec OM Image Share (ou marquez-les avec « Share Order » sur l’appareil). Chaque photo enregistrée par l’application est développée.</string>
+    <string name="brand_ricoh_other_app">Image Sync pour les Pentax et les anciens modèles GR</string>
+    <string name="brand_ricoh_auto_send">Activez le transfert automatique dans l’application si votre modèle le permet, ou importez les photos depuis l’application. Chaque photo qu’elle enregistre est développée.</string>
+    <string name="brand_leica_auto_send">Activez l’import automatique dans Leica FOTOS si votre modèle le permet, ou importez les photos depuis l’application.</string>
+    <string name="brand_other_auto_send">Activez l’envoi automatique dans l’application si elle le propose, en pleine taille. Sinon, importez les photos depuis l’application : chaque photo qu’elle enregistre est développée.</string>
+
+    <!-- Notifications and background work -->
+    <string name="channel_service">Bromide actif</string>
+    <string name="channel_service_desc">Affichée pendant que Bromide attend des photos de votre appareil</string>
+    <string name="channel_phone">Développement des photos</string>
+    <string name="channel_phone_desc">Progression pendant que Bromide développe les photos de ce téléphone ou d’une carte mémoire</string>
+    <string name="service_starting">Démarrage…</string>
+    <string name="service_stopped">Arrêté</string>
+    <string name="service_developing">Développement… terminées : %1$d, en attente : %2$d</string>
+    <string name="service_hotspot_off">Point d’accès désactivé. Activez-le pour que l’appareil puisse se connecter</string>
+    <plurals name="service_developed">
+        <item quantity="one">%1$d photo développée · %2$s</item>
+        <item quantity="many">%1$d photos développées · %2$s</item>
+        <item quantity="other">%1$d photos développées · %2$s</item>
+    </plurals>
+    <string name="service_connected">Appareil connecté · %1$s</string>
+    <string name="service_waiting_ftp">En attente de photos · %1$s:%2$d</string>
+    <string name="service_waiting_app">En attente de photos de l’application de votre appareil</string>
+    <string name="phone_notif_title">Développement des photos du téléphone</string>
+    <string name="phone_notif_progress">Développement des photos du téléphone · %1$d sur %2$d</string>
+    <string name="phone_notif_stopped">Arrêté : %1$d photos du téléphone développées sur %2$d</string>
+    <plurals name="phone_notif_done">
+        <item quantity="one">%d photo du téléphone développée</item>
+        <item quantity="many">%d photos du téléphone développées</item>
+        <item quantity="other">%d photos du téléphone développées</item>
+    </plurals>
+    <plurals name="phone_notif_failed">
+        <item quantity="one">%d n’a pas pu être développée</item>
+        <item quantity="many">%d n’ont pas pu être développées</item>
+        <item quantity="other">%d n’ont pas pu être développées</item>
+    </plurals>
+    <string name="card_notif_title">Développement des photos de la carte</string>
+    <string name="card_notif_progress">Développement de la carte · %1$d sur %2$d</string>
+    <string name="card_notif_stopped">Arrêté : %1$d photos de la carte développées sur %2$d</string>
+    <plurals name="card_notif_done">
+        <item quantity="one">%d photo de la carte développée</item>
+        <item quantity="many">%d photos de la carte développées</item>
+        <item quantity="other">%d photos de la carte développées</item>
+    </plurals>
+    <string name="batch_done_where">Dans %1$s</string>
+    <string name="batch_busy_card">Une carte mémoire est en cours de développement. Les photos du téléphone pourront démarrer ensuite.</string>
+    <string name="batch_busy_phone">Des photos du téléphone sont en cours de développement. La carte pourra démarrer ensuite.</string>
+
+    <!-- Errors -->
+    <!-- "DSC01234.ARW : <raison technique>" -->
+    <string name="error_named">%1$s : %2$s</string>
+    <string name="error_no_raw">RAW non pris en charge sur ce téléphone</string>
+    <string name="error_read_photo">impossible de lire la photo</string>
+    <string name="error_no_camera">Aucun appareil à écouter. Ajoutez-en un dans Paramètres → Mes appareils.</string>
+    <string name="error_port">Impossible de démarrer sur le port %1$d : %2$s</string>
+    <string name="error_no_raw_camera">Ce téléphone ne peut pas décoder les fichiers RAW. Envoyez des JPEG depuis l’appareil.</string>
+    <string name="error_develop">Impossible de développer %1$s : %2$s</string>
+    <string name="error_start_phone">Impossible de lancer le développement : %1$s</string>
+
+    <!-- Settings choices -->
+    <string name="preview_portrait">Portrait</string>
+    <string name="preview_dusk">Crépuscule</string>
+    <string name="preview_still">Nature morte</string>
+    <string name="preview_last_photo">Votre dernière photo</string>
+    <string name="source_auto">RAW si disponible (idéal)</string>
+    <string name="source_auto_desc">En RAW+JPEG, le JPEG s’affiche d’abord, puis la version RAW le remplace. Fonctionne aussi avec les appareils qui ne font que du JPEG.</string>
+    <string name="source_jpeg">JPEG uniquement (plus rapide)</string>
+    <string name="source_jpeg_desc">Ignore les fichiers RAW. Transferts plus légers et résultats plus rapides, mais moins de détails dans les hautes lumières et les ombres.</string>
+    <string name="size_full">Pleine taille</string>
+    <string name="size_half">Demi-taille</string>
+    <string name="size_2048">2048 px</string>
+    <string name="size_3000">3000 px</string>
+    <string name="size_full_short">Pleine taille</string>
+
+    <!-- Films: names stay as they are; this is each one's character -->
+    <string name="category_color">Couleur</string>
+    <string name="category_bw">N&amp;B</string>
+    <string name="category_slide">Diapo</string>
+    <string name="category_cinema">Cinéma</string>
+    <string name="stock_unknown"></string>
+    <string name="stock_portra400">Contraste doux, peau naturelle, couleurs délicates</string>
+    <string name="stock_portra160">Grain plus fin, un peu plus propre que la 400</string>
+    <string name="stock_portra800">La Portra des basses lumières, plus chaude, plus de grain</string>
+    <string name="stock_gold200">Pellicule grand public chaude, ensoleillée, nostalgique</string>
+    <string name="stock_ultramax400">Couleurs vives du quotidien, grain visible</string>
+    <string name="stock_ektar100">Saturée, grain fin, paysages éclatants</string>
+    <string name="stock_c200">Verts froids, le look Fuji grand public classique</string>
+    <string name="stock_superia400">Verts et magentas Fuji, granuleuse</string>
+    <string name="stock_pro400h">Pastels aériens, ombres tirant sur le cyan</string>
+    <string name="stock_vision250d">Film cinéma lumière du jour, tirage 2383</string>
+    <string name="stock_vision500t">Film cinéma tungstène : froid le jour, riche la nuit</string>
+    <string name="stock_cinestill800t">La 500T sans rem-jet : halos rouges autour des lumières</string>
+    <string name="stock_provia100f">Diapositive neutre et propre</string>
+    <string name="stock_velvia100">Diapositive dense et saturée</string>
+    <string name="stock_ektachrome100">Diapositive nette, plutôt froide</string>
+    <string name="stock_kodachrome64">La diapositive légendaire, rouges chauds</string>
+    <string name="stock_trix400">Noir et blanc classique et granuleux, noirs profonds</string>
+    <string name="stock_hp5">Tolérante, contraste plus doux, grain intemporel</string>
+    <string name="stock_tmax100">Noir et blanc moderne, net, au grain fin</string>
+    <string name="stock_delta3200">Pellicule de nuit : gros grain, contraste faible, ambiance sombre</string>
+    <string name="stock_panf50">Grain ultra fin, contraste marqué</string>
+    <string name="stock_acros100">Tons doux et soyeux, grain très fin</string>
+    <string name="stock_sfx200">Rouge étendu : ciels sombres, feuillages lumineux</string>
+
+    <!-- Film cards and the film library -->
+    <!-- Edge print on the selected film card, all caps like a film strip -->
+    <string name="card_loaded">CHARGÉ</string>
+    <string name="card_chosen">CHOISI</string>
+    <string name="card_tweaked">MODIFIÉ</string>
+    <string name="favorite_add">Ajouter aux favoris</string>
+    <string name="favorite_remove">Retirer des favoris</string>
+    <string name="adjust_film">Régler %1$s</string>
+    <string name="films">Films</string>
+    <!-- Search matches English and French words, and the French category labels -->
+    <string name="films_search">Rechercher : portra, n&amp;b, 400, diapo…</string>
+    <string name="clear">Effacer</string>
+    <!-- Used for both photos and films -->
+    <string name="filter_all">Tout</string>
+    <string name="filter_favorites">Favoris</string>
+    <string name="filter_camera">Appareil</string>
+    <string name="filter_phone">Téléphone</string>
+    <string name="films_no_favorites">Aucun favori pour l’instant. Touchez le cœur d’un film pour l’ajouter.</string>
+    <string name="films_none">Aucun film ne correspond.</string>
+
+    <!-- Gallery -->
+    <plurals name="gallery_count">
+        <item quantity="one">%d photo</item>
+        <item quantity="many">%d photos</item>
+        <item quantity="other">%d photos</item>
+    </plurals>
+    <string name="gallery_develop_phone">Développer des photos du téléphone</string>
+    <string name="develop_from_card">Développer depuis la carte</string>
+    <string name="gallery_empty">Les photos développées apparaîtront ici.</string>
+    <string name="gallery_empty_phone">Les photos que vous développez depuis ce téléphone apparaîtront ici.</string>
+    <string name="share">Partager</string>
+    <string name="delete">Supprimer</string>
+    <string name="share_photo">Partager la photo</string>
+    <!-- My cameras -->
+    <string name="cameras_intro">Bromide écoute tous vos appareils à la fois, et distingue leurs photos par marque et par modèle.</string>
+    <string name="cameras_none">Aucun appareil pour l’instant.</string>
+    <string name="camera_name">Nom de l’appareil</string>
+    <string name="camera_film_for">Film pour %1$s</string>
+    <string name="camera_film_home">Le film choisi sur l’écran d’accueil</string>
+    <string name="camera_film_home_short">Celui de l’écran d’accueil</string>
+    <string name="camera_remove_title">Retirer %1$s ?</string>
+    <string name="camera_remove_text">Bromide cesse de l’écouter. Les photos déjà développées restent dans votre galerie.</string>
+    <string name="camera_sends">Envoi</string>
+    <string name="camera_sends_ftp">En Wi-Fi, directement à Bromide (FTP)</string>
+    <string name="camera_sends_app_other">Via l’application de l’appareil</string>
+    <!-- "Via Creators' App" -->
+    <string name="camera_sends_app">Via %1$s</string>
+    <string name="camera_sends_card">Depuis la carte mémoire</string>
+    <string name="camera_film">Film</string>
+    <string name="rename">Renommer</string>
+    <string name="setup_guide">Guide de configuration</string>
+    <!-- Default camera name for "another brand" -->
+    <string name="camera_default_name">Mon appareil</string>
+
+    <!-- Settings -->
+    <string name="settings_camera">Appareil</string>
+    <string name="settings_my_cameras">Mes appareils (%1$d)</string>
+    <string name="settings_autostart">Démarrer automatiquement</string>
+    <string name="settings_autostart_desc">À l’ouverture de Bromide (les appareils FTP ont aussi besoin du point d’accès activé)</string>
+    <string name="settings_per_film">Grain, halation, couleur et exposition se règlent film par film : touchez Régler le film, en bas de l’écran d’accueil.</string>
+    <string name="settings_camera_files">Fichiers de l’appareil</string>
+    <string name="settings_from_card">Développer depuis une carte mémoire…</string>
+    <string name="settings_saved">Photos enregistrées</string>
+    <string name="settings_size">Taille sur le téléphone</string>
+    <string name="settings_size_desc">Vos originaux restent sur la carte de l’appareil. Chaque photo garde sa recette : une version pleine taille peut être recréée plus tard depuis la carte.</string>
+    <string name="settings_ftp">Connexion FTP</string>
+    <string name="settings_password">Exiger un mot de passe</string>
+    <string name="settings_password_desc">Désactivé : l’appareil peut envoyer n’importe quel mot de passe (sans risque sur votre propre point d’accès)</string>
+    <string name="settings_ftp_password">Mot de passe FTP</string>
+    <string name="settings_port">Port</string>
+    <string name="settings_ftp_apply">Les changements de connexion s’appliquent la prochaine fois que Bromide commence à recevoir.</string>
+    <string name="settings_about">À propos</string>
+    <string name="settings_credits">Modélisation des films couleur par spektrafilm, d’Andrea Volpato : des simulations spectrales de vraies pellicules, construites à partir des fiches techniques des fabricants (LUT de films sous CC BY-SA 4.0). Les films noir et blanc utilisent le modèle propre à Bromide. Décodage RAW par LibRaw (CDDL-1.0). Images d’exemple : NASA et SpaceX (domaine public), Rachel Michetti (CC0). Police : TeX Gyre Heros (GUST Font License). Les noms de films sont des marques de leurs propriétaires ; Bromide n’est affilié à aucun d’eux.</string>
+    <string name="settings_gpl">Bromide est un logiciel libre sous licence GNU GPL v3 : vous pouvez lire, modifier et partager son code source. Il n’a ni publicité, ni compte, ni statistiques d’usage, et vos photos ne quittent jamais votre téléphone.</string>
+    <string name="source_code">Code source</string>
+    <string name="privacy">Confidentialité</string>
+    <!-- One film and its settings -->
+    <string name="favorite">Favori</string>
+    <!-- On the preview: hold to see the photo without film -->
+    <string name="film_original">ORIGINAL</string>
+    <string name="film_hold_compare">MAINTENIR POUR COMPARER</string>
+    <string name="film_zoom_hint">Pincez ou touchez deux fois pour zoomer sur le grain.</string>
+    <string name="film_about_bw">Les films noir et blanc reposent sur le modèle négatif et papier propre à Bromide.</string>
+    <string name="film_about_color">Couleurs et tons issus de la simulation par spektrafilm de la fiche technique de ce film, tirés comme le ferait un labo.</string>
+    <string name="film_reset_all">Tout réinitialiser</string>
+    <string name="film_saved">Enregistrés avec ce film et appliqués aux prochaines photos que vous prendrez avec. Touchez une valeur pour la réinitialiser.</string>
+    <string name="film_saved_phone">Enregistrés avec ce film : vos appareils les appliquent aussi quand ils l’utilisent. Touchez une valeur pour la réinitialiser.</string>
+    <string name="film_chosen_phone">Choisi pour les photos de votre téléphone</string>
+    <string name="film_use_phone">Utiliser pour ces photos du téléphone</string>
+    <string name="film_loaded">Chargé dans votre appareil</string>
+    <string name="film_use">Utiliser ce film</string>
+    <string name="look_grain">Grain</string>
+    <string name="look_amount">Quantité</string>
+    <string name="look_size">Taille</string>
+    <string name="look_light">Lumière</string>
+    <string name="look_exposure">Exposition</string>
+    <string name="look_halation">Halation</string>
+    <string name="look_halation_hint">Le halo rouge autour des lumières. Plus marqué sur les films sans couche anti-halo, comme CineStill.</string>
+    <string name="look_color_group">Couleur</string>
+    <!-- A colored filter on the lens, for black & white films -->
+    <string name="look_filter">Filtre</string>
+    <string name="look_filter_hint">Comme un filtre sur l’objectif : l’orange assombrit les ciels bleus, le bleu les éclaircit.</string>
+    <!-- Saturation -->
+    <string name="look_color">Couleur</string>
+    <string name="look_warmth">Chaleur</string>
+    <string name="look_tint">Teinte</string>
+    <string name="look_lab">Labo</string>
+    <string name="look_auto_print">Tirage auto</string>
+    <string name="look_lab_hint">Équilibre l’exposition comme le ferait la tireuse d’un labo photo. Désactivé : tirage exactement comme à la prise de vue.</string>
+    <string name="look_orange">orange</string>
+    <string name="look_blue">bleu</string>
+    <string name="look_warm">chaud</string>
+    <string name="look_cool">froid</string>
+    <string name="look_magenta">magenta</string>
+    <string name="look_green">vert</string>
+    <string name="look_neutral">neutre</string>
+    <!-- "chaud +0,30" -->
+    <string name="value_signed">%1$s %2$+.2f</string>
+    <string name="value_off">désactivé</string>
+    <string name="value_times">%1$.1f×</string>
+    <string name="value_ev">%1$+.1f EV</string>
+    <string name="value_percent">%1$.0f %%</string>
+    <!-- Grain size: the film's own, finer, coarser -->
+    <string name="grain_stock">d’origine</string>
+    <string name="grain_fine">fin %1$.1f×</string>
+    <string name="grain_coarse">gros %1$.1f×</string>
+    <!-- One-line summary of a film's settings, shown in capitals -->
+    <string name="summary_no_grain">sans grain</string>
+    <string name="summary_grain">grain %1$.1f×</string>
+    <!-- "grain fin 0,8×", "grain d’origine" -->
+    <string name="summary_grain_size">grain %1$s</string>
+    <string name="summary_no_halation">sans halation</string>
+    <string name="summary_halation">halation %1$.1f×</string>
+    <string name="summary_color">couleur %1$.1f×</string>
+    <string name="summary_lab_off">sans labo</string>
+    <string name="summary_lab">labo %1$.0f %%</string>
+    <string name="summary_stock">%1$d · réglages d’origine</string>
+    <!-- Phone photos -->
+    <string name="phone_title">Photos du téléphone</string>
+    <string name="phone_choose_others">Choisir d’autres</string>
+    <string name="phone_intro">Les photos prises avec ce téléphone, développées comme sur pellicule. Choisissez-en dans votre galerie : Bromide enregistre des copies développées et laisse les originaux intacts.</string>
+    <string name="phone_choose">Choisir des photos</string>
+    <!-- %1$s is a folder, Pictures/Bromide/Phone -->
+    <string name="phone_where">Les copies développées vont dans %1$s, à part des photos de votre appareil.</string>
+    <plurals name="phone_picked">
+        <item quantity="one">%d photo choisie</item>
+        <item quantity="many">%d photos choisies</item>
+        <item quantity="other">%d photos choisies</item>
+    </plurals>
+    <string name="phone_film_separate">Distinct de celui de votre appareil</string>
+    <string name="adjust">Régler</string>
+    <string name="home_adjust_film">Régler le film</string>
+    <string name="phone_size_full">Aussi grande que le téléphone l’a prise. Enregistrée dans %1$s.</string>
+    <string name="phone_size_half">Moitié de la largeur et de la hauteur : environ quatre fois plus rapide. Enregistrée dans %1$s.</string>
+    <string name="phone_size_share">Assez petite pour être partagée partout, et la plus rapide. Enregistrée dans %1$s.</string>
+    <string name="phone_develop_one">Développer cette photo</string>
+    <plurals name="develop_n">
+        <item quantity="one">Développer %d photo</item>
+        <item quantity="many">Développer %d photos</item>
+        <item quantity="other">Développer %d photos</item>
+    </plurals>
+    <!-- "3 sur 12" -->
+    <string name="progress_of">%1$d sur %2$d</string>
+    <string name="phone_background">Fonctionne en arrière-plan : vous pouvez quitter Bromide, la notification indique où ça en est.</string>
+    <string name="phone_developed">Développées : %1$d</string>
+    <!-- Develop from a memory card -->
+    <string name="card_intro">Branchez la carte de votre appareil sur le téléphone avec un lecteur de cartes USB-C. Bromide développe les originaux en pleine qualité, en RAW quand il existe, avec le même film que chaque photo a reçu sur le téléphone.</string>
+    <string name="card_no_raw">Ce téléphone ne peut pas décoder les fichiers RAW : seuls les JPEG seront développés.</string>
+    <string name="card_choose">Choisir le dossier DCIM de la carte</string>
+    <string name="card_choose_other">Choisir un autre dossier</string>
+    <string name="card_scanning">Recherche de photos…</string>
+    <plurals name="card_found">
+        <item quantity="one">%1$d photo trouvée (%2$d RAW, %3$d JPEG seul)</item>
+        <item quantity="many">%1$d photos trouvées (%2$d RAW, %3$d JPEG seul)</item>
+        <item quantity="other">%1$d photos trouvées (%2$d RAW, %3$d JPEG seul)</item>
+    </plurals>
+    <string name="card_same_film">Même film que sur le téléphone</string>
+    <string name="card_same_film_desc">%1$d d’entre elles ont été développées sur ce téléphone</string>
+    <string name="card_one_film">Un film pour toutes</string>
+    <string name="card_one_film_desc">Développer chaque photo avec le même film</string>
+    <string name="card_saved_to">Enregistrées dans %1$s.</string>
+    <string name="card_nothing">Rien à développer</string>
+    <plurals name="card_done">
+        <item quantity="one">Terminé : %d photo développée.</item>
+        <item quantity="many">Terminé : %d photos développées.</item>
+        <item quantity="other">Terminé : %d photos développées.</item>
+    </plurals>
+    <!-- Home -->
+    <string name="home_all_films">Les %1$d films</string>
+    <string name="home_card_title">Développer depuis votre carte</string>
+    <string name="home_card_text">Branchez la carte de l’appareil sur ce téléphone avec un lecteur de cartes USB-C.</string>
+    <string name="home_add_wifi_camera">Ajouter un appareil Wi-Fi</string>
+    <string name="home_setup_title">Configurez votre appareil</string>
+    <string name="home_setup_text">Dites à Bromide avec quoi vous photographiez. Quelques minutes, une seule fois.</string>
+    <string name="home_setup_button">Configurer mon appareil</string>
+    <string name="hotspot_off">Point d’accès désactivé</string>
+    <string name="home_hotspot_text">Votre appareil se connecte via le point d’accès de votre téléphone. Activez-le et Bromide est prêt.</string>
+    <string name="home_hotspot_text_running">Votre appareil se connecte via le point d’accès de votre téléphone. Activez-le et Bromide le détecte aussitôt.</string>
+    <string name="home_turn_on_hotspot">Activer le point d’accès</string>
+    <string name="turn_on">Activer</string>
+    <string name="home_ready">Prêt quand vous l’êtes</string>
+    <string name="home_tap_start">Touchez Démarrer, puis photographiez.</string>
+    <string name="home_will_ask_photos">Bromide vous demandera l’accès à vos photos, pour récupérer celles qu’enregistre l’application de votre appareil.</string>
+    <string name="developing">Développement…</string>
+    <string name="home_connected">Appareil connecté</string>
+    <string name="home_waiting">En attente de photos</string>
+    <string name="home_developed_session">Développées cette session : %1$d</string>
+    <string name="home_in_queue">%1$d en attente</string>
+    <string name="home_take_picture">Prenez une photo : elle apparaît ici en quelques secondes.</string>
+    <!-- "Hôte pour l’appareil : 192.168.43.1 · port 2121" -->
+    <string name="home_camera_host">Hôte pour l’appareil : %1$s · port %2$d</string>
+    <string name="home_take_picture_app">Prenez une photo et laissez l’application de votre appareil l’envoyer.</string>
+    <string name="home_hotspot_notice">Vos appareils FTP ne peuvent pas se connecter tant qu’il est désactivé.</string>
+    <string name="home_host_changed">L’adresse de votre point d’accès a changé</string>
+    <string name="home_host_changed_text">Sur l’appareil, réglez l’hôte FTP sur %1$s (c’était %2$s).</string>
+    <string name="home_no_photo_access">Bromide ne voit pas vos photos</string>
+    <string name="home_no_photo_access_text">Il en a besoin pour récupérer ce qu’enregistre l’application de votre appareil.</string>
+    <string name="home_partial_access">Bromide ne voit que les photos choisies</string>
+    <string name="home_partial_access_text">Pour développer les nouvelles photos de l’application de votre appareil, autorisez l’accès à toutes les photos dans les paramètres de Bromide.</string>
+    <string name="home_phone_entry">Développer les photos prises avec ce téléphone</string>
+    <string name="home_just_developed">Tout juste développée</string>
+    <string name="from_raw">depuis le RAW</string>
+    <string name="from_jpeg">depuis le JPEG</string>
+    <string name="home_preview_on">Aperçu sur</string>
+    <!-- Camera setup guide -->
+    <string name="next">Suivant</string>
+    <string name="done">Terminé</string>
+    <string name="onboard_lets_go">C’est parti</string>
+    <string name="onboard_waiting_hotspot">En attente du point d’accès…</string>
+    <string name="onboard_camera_joined">L’appareil y est connecté</string>
+    <string name="onboard_waiting_camera">En attente de l’appareil…</string>
+    <string name="onboard_allow_photos">Autoriser l’accès aux photos</string>
+    <string name="onboard_start_shooting">Commencer à photographier</string>
+    <string name="onboard_waiting_photo">En attente d’une photo…</string>
+    <string name="onboard_phone_only">Seulement les photos de ce téléphone pour l’instant</string>
+    <string name="onboard_skip_check">Passer cette vérification</string>
+    <string name="onboard_card_now">Développer une carte maintenant</string>
+    <string name="onboard_finish_no_test">Terminer sans photo de test</string>
+    <string name="onboard_welcome_title">Le rendu d’une vraie pellicule, directement depuis votre appareil.</string>
+    <string name="onboard_welcome_text">Votre appareil envoie chaque photo à ce téléphone. Bromide la développe comme le ferait une vraie pellicule, et l’enregistre dans votre galerie, quelques secondes après le déclenchement.</string>
+    <string name="onboard_welcome_need">La configuration prend quelques minutes, une seule fois. Il vous faut :</string>
+    <string name="onboard_welcome_camera">Votre appareil. La plupart des appareils avec Wi-Fi ou Bluetooth fonctionnent, quelle que soit la marque.</string>
+    <string name="onboard_welcome_no_wifi">Pas de Wi-Fi ? Vous pouvez quand même développer les photos depuis la carte mémoire.</string>
+    <string name="onboard_welcome_no_camera">Pas d’appareil sous la main ? Bromide développe aussi les photos prises avec ce téléphone.</string>
+    <!-- Small capitalized labels above each step's title -->
+    <string name="onboard_kicker_camera">Votre appareil</string>
+    <string name="onboard_kicker_wifi">Wi-Fi</string>
+    <string name="onboard_kicker_app">Application</string>
+    <string name="onboard_kicker_card">Carte mémoire</string>
+    <string name="onboard_kicker_test">Test</string>
+    <string name="onboard_brand_title">Avec quel appareil photographiez-vous ?</string>
+    <string name="onboard_brand_text">Bromide affiche les étapes adaptées. Vous pourrez ajouter d’autres appareils plus tard.</string>
+    <string name="onboard_method_title">Comment doit-il envoyer les photos ?</string>
+    <string name="onboard_tag_most">La plupart des appareils</string>
+    <string name="onboard_method_app">Fonctionne avec presque tous les appareils dotés du Wi-Fi ou du Bluetooth. L’application reçoit vos photos sur le téléphone, et Bromide développe chacune d’elles.</string>
+    <string name="onboard_method_ftp_title">Directement à Bromide (FTP)</string>
+    <string name="onboard_tag_fastest">Le plus rapide · RAW</string>
+    <!-- %1$s: camera models, "a7 IV, a7S III, a1" -->
+    <string name="onboard_method_ftp_examples">Pas d’application intermédiaire, et les fichiers RAW passent. Uniquement sur les appareils avec envoi FTP, comme les %1$s.</string>
+    <string name="onboard_method_ftp_few">Pas d’application intermédiaire, et les fichiers RAW passent. Uniquement sur les appareils avec envoi FTP, ce que peu de modèles %1$s proposent.</string>
+    <string name="onboard_tag_no_wifi">Sans Wi-Fi</string>
+    <string name="onboard_method_card">Après la prise de vue, branchez la carte sur ce téléphone avec un lecteur de cartes USB-C. Pleine taille, RAW compris.</string>
+    <string name="onboard_method_not_sure">Vous hésitez ? Cherchez « FTP » dans le menu réseau de votre appareil. S’il n’y est pas, utilisez l’application.</string>
+    <string name="onboard_hotspot_title">Activez votre point d’accès</string>
+    <string name="onboard_hotspot_text">Votre appareil va se connecter au point d’accès de votre téléphone. Pas besoin d’Internet.</string>
+    <string name="onboard_open_hotspot">Ouvrir les réglages du point d’accès</string>
+    <string name="onboard_hotspot_tip">Astuce : donnez à votre point d’accès un nom et un mot de passe simples. Vous les saisirez une fois sur l’appareil.</string>
+    <string name="onboard_hotspot_on">Point d’accès activé</string>
+    <string name="onboard_join_title">Connectez-y l’appareil</string>
+    <string name="onboard_join_text">Sur l’appareil, rejoignez le point d’accès de votre téléphone comme n’importe quel réseau Wi-Fi.</string>
+    <string name="onboard_join_generic">Regardez dans le menu réseau ou Wi-Fi de l’appareil. Sur certains appareils, on choisit le réseau en configurant le FTP, à l’étape suivante.</string>
+    <string name="onboard_join_pick">Choisissez le nom de votre point d’accès et saisissez son mot de passe.</string>
+    <string name="onboard_ftp_title">Indiquez à l’appareil où envoyer les photos</string>
+    <string name="onboard_menu_vary">Les noms des menus varient un peu selon les modèles.</string>
+    <string name="onboard_ftp_generic">Dans le menu réseau de l’appareil, ajoutez un serveur FTP (il peut s’appeler transfert FTP ou envoi FTP).</string>
+    <string name="onboard_ftp_enter">Saisissez ces valeurs :</string>
+    <string name="onboard_ftp_host">Nom d’hôte / adresse du serveur</string>
+    <string name="onboard_ftp_user_label">Nom d’utilisateur</string>
+    <string name="onboard_ftp_password">Mot de passe</string>
+    <string name="onboard_ftp_and_set">Et réglez :</string>
+    <string name="onboard_ftp_passive">Mode passif : activé</string>
+    <string name="onboard_ftp_secure">Protocole sécurisé (FTPS/SFTP) : désactivé</string>
+    <!-- %1$s is the FTP user name, "film" -->
+    <string name="onboard_ftp_user">Utilisateur : %1$s   ·   Mot de passe : n’importe lequel (ex. film)</string>
+    <string name="onboard_ftp_raw">Vous photographiez en RAW+JPEG ? Envoyez les deux pour la meilleure qualité : le JPEG apparaît d’abord, puis la version RAW le remplace. N’envoyer que les JPEG fonctionne aussi, et c’est plus rapide.</string>
+    <string name="onboard_waiting_connect">En attente de la connexion de l’appareil…</string>
+    <string name="onboard_starting">Démarrage de Bromide…</string>
+    <string name="onboard_access_title">Laissez Bromide voir les nouvelles photos</string>
+    <string name="onboard_access_text">%1$s enregistre sur ce téléphone les photos qu’elle reçoit. Bromide doit les voir pour les développer.</string>
+    <string name="onboard_access_text_other">L’application de votre appareil enregistre sur ce téléphone les photos qu’elle reçoit. Bromide doit les voir pour les développer.</string>
+    <!-- %1$s is a brand, "Sony" -->
+    <string name="onboard_access_only">Il ne récupère que les photos prises par un appareil %1$s. Les photos du téléphone et les captures d’écran ne sont pas touchées, et les originaux restent là où l’application les a enregistrés.</string>
+    <string name="onboard_access_only_other">Il ne récupère que les photos prises par un appareil photo. Les photos du téléphone et les captures d’écran ne sont pas touchées, et les originaux restent là où l’application les a enregistrés.</string>
+    <string name="onboard_access_ok">Bromide voit les nouvelles photos</string>
+    <string name="onboard_access_partial">Bromide ne voit toujours pas vos photos. Si Android vous a proposé de sélectionner des photos, choisissez plutôt de tout autoriser : sinon, Bromide ne voit pas les nouvelles photos.</string>
+    <string name="onboard_open_app_settings">Ouvrir les paramètres de l’appli Bromide</string>
+    <string name="onboard_pair_title">Associez l’appareil à %1$s</string>
+    <string name="onboard_pair_title_other">Associez l’appareil à son application</string>
+    <string name="onboard_pair_install">Installez %1$s et associez-y votre appareil. L’application vous guide.</string>
+    <string name="onboard_pair_install_other">Installez l’application du fabricant de votre appareil et associez-y l’appareil. L’application vous guide.</string>
+    <string name="onboard_find_app">Trouver %1$s sur Google Play</string>
+    <string name="onboard_pair_size">Choisissez la plus grande taille de photo proposée par l’application. Les petites copies (souvent 2 Mpx) fonctionnent, mais paraissent molles une fois développées.</string>
+    <string name="onboard_pair_keep">Laissez Bromide tourner (il affiche une notification). L’application de l’appareil peut rester en arrière-plan.</string>
+    <string name="onboard_card_title">Développer depuis la carte</string>
+    <string name="onboard_card_text">Après une séance, insérez la carte dans un lecteur de cartes USB-C branché sur ce téléphone, puis ouvrez « Développer depuis une carte mémoire » dans les paramètres de Bromide.</string>
+    <string name="onboard_card_text2">Bromide développe chaque photo en pleine taille, RAW compris, avec le film que vous choisissez.</string>
+    <string name="onboard_card_later">Si votre appareil gagne le Wi-Fi plus tard (ou si vous en prenez un qui l’a), ajoutez-le dans Paramètres → Mes appareils.</string>
+    <string name="onboard_it_works">Ça marche !</string>
+    <string name="onboard_take_photo">Prenez une photo</string>
+    <string name="onboard_developed_as">Développée en %1$s.</string>
+    <string name="onboard_from_now_ftp">Désormais : point d’accès activé, ouvrez Bromide, photographiez.</string>
+    <!-- %1$s: film codes, "portra400, portra160, portra800, gold200" -->
+    <string name="onboard_tip_ftp_film">Astuce : pour changer de film depuis l’appareil, ajoutez un serveur FTP par film et utilisez le code du film comme nom d’utilisateur (%1$s…).</string>
+    <string name="onboard_from_now_app">Désormais : ouvrez Bromide, photographiez, et laissez l’application envoyer vos photos.</string>
+    <string name="onboard_tip_camera_film">Astuce : dans Paramètres → Mes appareils, vous pouvez donner à chaque appareil son propre film.</string>
+    <string name="onboard_press_shutter">Déclenchez. La photo arrive ici quelques secondes plus tard.</string>
+    <string name="onboard_send_from_app">Prenez une photo, ou envoyez-en une depuis l’application. Une fois qu’elle est enregistrée sur le téléphone, Bromide la développe ici.</string>
+    <string name="onboard_nothing_yet">Toujours rien ? Ouvrez la galerie de l’application pour vérifier que la photo est arrivée sur le téléphone. Bromide récupère les photos prises par un appareil %1$s après que vous l’avez ajouté ici.</string>
+    <string name="onboard_nothing_yet_other">Toujours rien ? Ouvrez la galerie de l’application pour vérifier que la photo est arrivée sur le téléphone. Bromide récupère les photos prises par un appareil photo après que vous l’avez ajouté ici.</string>
+    <string name="skip">Passer</string>
+
+    <string name="roll_title">Pellicule offerte</string>
+    <plurals name="roll_left_of">
+        <item quantity="one">vue restante sur %1$d</item>
+        <item quantity="many">vues restantes sur %1$d</item>
+        <item quantity="other">vues restantes sur %1$d</item>
+    </plurals>
+    <plurals name="roll_strip_desc">
+        <item quantity="one">%1$d vue offerte restante sur %2$d</item>
+        <item quantity="many">%1$d vues offertes restantes sur %2$d</item>
+        <item quantity="other">%1$d vues offertes restantes sur %2$d</item>
+    </plurals>
+    <string name="roll_phone_free">Les photos prises avec ce téléphone sont toujours gratuites.</string>
+    <string name="roll_unlock">Débloquer</string>
+    <string name="roll_unlock_price">Débloquer · %1$s</string>
+    <string name="roll_unlock_full">Débloquer Bromide</string>
+    <string name="roll_finished">Votre pellicule offerte est terminée</string>
+    <string name="roll_finished_text">Débloquez Bromide pour continuer à développer les photos de votre appareil.</string>
+    <plurals name="roll_waiting">
+        <item quantity="one">%1$d photo attend d’être développée. Débloquez Bromide et elle sera développée tout de suite.</item>
+        <item quantity="many">%1$d photos attendent d’être développées. Débloquez Bromide et elles seront développées tout de suite.</item>
+        <item quantity="other">%1$d photos attendent d’être développées. Débloquez Bromide et elles seront développées tout de suite.</item>
+    </plurals>
+    <string name="roll_terms">Un seul paiement, tous les films, pour toujours. Les photos prises avec ce téléphone restent gratuites.</string>
+    <string name="roll_pending">Paiement en attente : Bromide se débloque dès qu’il est validé.</string>
+    <string name="roll_unavailable">Google Play n’est pas joignable pour le moment. Réessayez dans un instant.</string>
+    <string name="roll_notif_left">%1$d vues offertes restantes sur %2$d</string>
+    <plurals name="roll_notif_waiting">
+        <item quantity="one">Pellicule offerte terminée · %1$d photo en attente</item>
+        <item quantity="many">Pellicule offerte terminée · %1$d photos en attente</item>
+        <item quantity="other">Pellicule offerte terminée · %1$d photos en attente</item>
+    </plurals>
+    <plurals name="roll_card_new">
+        <item quantity="one">%1$d de ces photos est nouvelle : elle utilise une vue de votre pellicule offerte (il en reste %2$d).</item>
+        <item quantity="many">%1$d de ces photos sont nouvelles : chacune utilise une vue de votre pellicule offerte (il en reste %2$d).</item>
+        <item quantity="other">%1$d de ces photos sont nouvelles : chacune utilise une vue de votre pellicule offerte (il en reste %2$d).</item>
+    </plurals>
+    <plurals name="roll_not_developed">
+        <item quantity="one">Pellicule offerte terminée : %1$d photo non développée</item>
+        <item quantity="many">Pellicule offerte terminée : %1$d photos non développées</item>
+        <item quantity="other">Pellicule offerte terminée : %1$d photos non développées</item>
+    </plurals>
+    <plurals name="roll_left_settings">
+        <item quantity="one">Pellicule offerte : %1$d vue restante sur %2$d</item>
+        <item quantity="many">Pellicule offerte : %1$d vues restantes sur %2$d</item>
+        <item quantity="other">Pellicule offerte : %1$d vues restantes sur %2$d</item>
+    </plurals>
+    <string name="latent_notif_title">Développement des photos en attente</string>
+    <string name="latent_notif_progress">Développement des photos en attente · %1$d sur %2$d</string>
+    <string name="latent_notif_stopped">Arrêté : %1$d photos en attente développées sur %2$d</string>
+    <plurals name="latent_notif_done">
+        <item quantity="one">%d photo en attente développée</item>
+        <item quantity="many">%d photos en attente développées</item>
+        <item quantity="other">%d photos en attente développées</item>
+    </plurals>
+    <string name="settings_unlock">Déblocage</string>
+    <string name="settings_unlocked">Débloqué. Merci de soutenir Bromide !</string>
+    <string name="settings_founder">Utilisateur de la première heure : Bromide est gratuit pour vous, pour toujours. Merci de l\'avoir essayé en premier !</string>
+    <string name="settings_founder_support">Rien à payer. Si vous voulez quand même soutenir Bromide, vous pouvez acheter le déblocage.</string>
+    <string name="settings_support">Soutenir Bromide</string>
+    <string name="settings_support_price">Soutenir Bromide · %1$s</string>
+    <string name="settings_restore">Restaurer l’achat</string>
+    <string name="settings_restoring">Vérification auprès de Google Play…</string>
+    <plurals name="settings_latent">
+        <item quantity="one">%1$d photo sera développée dès que Bromide sera débloqué.</item>
+        <item quantity="many">%1$d photos seront développées dès que Bromide sera débloqué.</item>
+        <item quantity="other">%1$d photos seront développées dès que Bromide sera débloqué.</item>
+    </plurals>
+    <string name="settings_discard_latent">Supprimer les photos en attente</string>
+</resources>

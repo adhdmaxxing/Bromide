@@ -1,0 +1,52 @@
+name: Play release
+
+# Push a tag like v1.0.0 to build the signed App Bundle for Google Play.
+# Needs four repository secrets (Settings → Secrets and variables → Actions):
+#   UPLOAD_KEYSTORE_BASE64  the upload keystore, base64-encoded (base64 -w0 upload.jks)
+#   UPLOAD_KEYSTORE_PASSWORD, UPLOAD_KEY_ALIAS, UPLOAD_KEY_PASSWORD
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # the build number is the commit count
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Engine unit tests
+        run: ./gradlew --no-daemon :app:testReleaseUnitTest
+
+      - name: Build signed App Bundle
+        env:
+          UPLOAD_KEYSTORE_BASE64: ${{ secrets.UPLOAD_KEYSTORE_BASE64 }}
+          BROMIDE_KEYSTORE_PASSWORD: ${{ secrets.UPLOAD_KEYSTORE_PASSWORD }}
+          BROMIDE_KEY_ALIAS: ${{ secrets.UPLOAD_KEY_ALIAS }}
+          BROMIDE_KEY_PASSWORD: ${{ secrets.UPLOAD_KEY_PASSWORD }}
+        run: |
+          echo "$UPLOAD_KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/upload.jks"
+          export BROMIDE_KEYSTORE="$RUNNER_TEMP/upload.jks"
+          ./gradlew --no-daemon :app:bundleRelease
+          rm "$RUNNER_TEMP/upload.jks"
+
+      - name: Upload bundle and R8 mapping
+        uses: actions/upload-artifact@v4
+        with:
+          name: Bromide-release
+          path: |
+            app/build/outputs/bundle/release/app-release.aab
+            app/build/outputs/mapping/release/mapping.txt
+          retention-days: 90

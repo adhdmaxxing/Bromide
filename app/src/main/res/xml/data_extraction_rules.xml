@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android 12+: back up settings, cameras and film looks, never photos in transit. -->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="file" path="inbox/" />
+        <exclude domain="file" path="latent/" />
+        <exclude domain="file" path="preview_last.jpg" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="file" path="inbox/" />
+        <exclude domain="file" path="latent/" />
+        <exclude domain="file" path="preview_last.jpg" />
+    </device-transfer>
+</data-extraction-rules>

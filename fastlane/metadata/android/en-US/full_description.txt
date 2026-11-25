@@ -1,0 +1,34 @@
+Bromide develops the photos from your camera as if they had been shot on film. You shoot as usual, and a few seconds later the photo is on your phone with the color, grain and halation of the film you picked.
+
+<b>How it works</b>
+Bromide doesn't put a preset on top of the picture. The color of each film comes from spektrafilm, a simulation of the real stock built from Kodak and Fujifilm datasheets: how each layer of the negative reacts to light, its dyes and curves, and the paper it gets printed on. Then the exposure is set the way a lab's printer would do it, halation is added (light that goes through the film, bounces off its base and comes back red), and grain is sized by the film's speed.
+
+If your camera sends RAW, Bromide decodes it on the phone and works from the sensor data. The exposure is matched to your camera's own JPEG, so your metering is kept.
+
+<b>Getting your photos in</b>
+• Over Wi-Fi: cameras with FTP upload send each photo to Bromide through your phone's hotspot, RAW included (Sony a7 IV, a7S III, a1, Canon EOS R5, Nikon Z8 and Z9, Fujifilm GFX100 II and others).
+• Through your camera maker's app (Creators' App, Camera Connect, SnapBridge, XApp, LUMIX Lab, OM Image Share, GR WORLD, Leica FOTOS). Bromide picks up each new photo the app saves. This works with most cameras that have Wi-Fi or Bluetooth.
+• From the memory card, with a USB-C card reader, at full resolution.
+• Photos taken with the phone.
+The first time you open it, a setup guide helps you connect your camera.
+
+<b>23 films</b>
+Color negative: Portra 160, 400 and 800, Gold 200, Ultramax 400, Ektar 100, Fujicolor C200, Superia X-Tra 400, Pro 400H.
+Cinema: Vision3 250D and 500T, plus 500T without its anti-halation layer (the CineStill look, red glow around lights).
+Slide: Provia 100F, Velvia 100, Ektachrome 100, Kodachrome 64.
+Black and white: Tri-X 400, HP5 Plus, T-Max 100, Delta 3200, Pan F Plus 50, Acros 100 II, SFX 200.
+You see every film on your own last photo before choosing. Each one has its own settings for grain, halation, exposure, color, warmth and tint.
+
+<b>Details</b>
+• Use several cameras at once, each with its own film.
+• Your original files are never changed. Developed photos keep their EXIF data (camera, lens, settings, date, location) and are saved in Pictures/Bromide.
+• Each photo remembers its film settings, so you can develop the full-resolution file from your card later with the same look.
+• It keeps working in the background with the screen off.
+
+<b>Price</b>
+Bromide is in early access: it's completely free, and it stays free for good for everyone who installs it now. Later, new users will get their first 36 camera photos free, then a single purchase unlocks the app. Photos taken with the phone are always free. There is no subscription, no ads and no account, and nothing is tracked. Everything runs on the phone without internet, and your photos stay on it.
+
+<b>Source code</b>
+Bromide is free software under the GPLv3. The code is on GitHub: github.com/adhdmaxxing/Bromide. Film color science by spektrafilm (Andrea Volpato), RAW decoding by LibRaw.
+
+Film names are trademarks of their owners. Bromide is not affiliated with or endorsed by Kodak, Fujifilm, Ilford or CineStill.

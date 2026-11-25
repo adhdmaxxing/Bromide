@@ -1,0 +1,34 @@
+Bromide développe les photos de votre appareil comme si elles avaient été prises sur pellicule. Vous photographiez comme d’habitude, et quelques secondes plus tard la photo est sur votre téléphone, avec les couleurs, le grain et la halation du film que vous avez choisi.
+
+<b>Comment ça marche</b>
+Bromide n’applique pas un preset par-dessus l’image. La couleur de chaque film vient de spektrafilm, une simulation de la vraie pellicule construite à partir des fiches techniques Kodak et Fujifilm : la réaction de chaque couche du négatif à la lumière, ses colorants et ses courbes, et le papier sur lequel il est tiré. Ensuite, l’exposition est réglée comme le ferait la tireuse d’un labo, la halation est ajoutée (la lumière traverse le film, rebondit sur son support et revient rouge), et le grain dépend de la sensibilité du film.
+
+Si votre appareil envoie du RAW, Bromide le décode sur le téléphone et travaille à partir des données du capteur. L’exposition est calée sur le JPEG de votre appareil, donc votre mesure est respectée.
+
+<b>Faire arriver vos photos</b>
+• En Wi-Fi : les appareils avec l’envoi FTP transmettent chaque photo à Bromide via le point d’accès du téléphone, RAW compris (Sony a7 IV, a7S III, a1, Canon EOS R5, Nikon Z8 et Z9, Fujifilm GFX100 II, entre autres).
+• Via l’application du fabricant (Creators' App, Camera Connect, SnapBridge, XApp, LUMIX Lab, OM Image Share, GR WORLD, Leica FOTOS). Bromide récupère chaque nouvelle photo enregistrée par l’application. Ça marche avec la plupart des appareils qui ont le Wi-Fi ou le Bluetooth.
+• Depuis la carte mémoire, avec un lecteur USB-C, en pleine résolution.
+• Les photos prises avec le téléphone.
+À la première ouverture, un guide vous aide à connecter votre appareil.
+
+<b>23 pellicules</b>
+Négatif couleur : Portra 160, 400 et 800, Gold 200, Ultramax 400, Ektar 100, Fujicolor C200, Superia X-Tra 400, Pro 400H.
+Cinéma : Vision3 250D et 500T, plus la 500T sans sa couche anti-halo (le rendu CineStill, avec la lueur rouge autour des lumières).
+Diapositive : Provia 100F, Velvia 100, Ektachrome 100, Kodachrome 64.
+Noir et blanc : Tri-X 400, HP5 Plus, T-Max 100, Delta 3200, Pan F Plus 50, Acros 100 II, SFX 200.
+Vous voyez chaque film sur votre dernière photo avant de choisir. Chacun a ses propres réglages de grain, halation, exposition, couleur, chaleur et teinte.
+
+<b>Détails</b>
+• Plusieurs appareils en même temps, chacun avec son film.
+• Vos fichiers originaux ne sont jamais modifiés. Les photos développées gardent leurs EXIF (appareil, objectif, réglages, date, lieu) et sont enregistrées dans Pictures/Bromide.
+• Chaque photo garde ses réglages de film : vous pouvez développer plus tard le fichier pleine résolution depuis la carte, avec le même rendu.
+• Ça continue de tourner en arrière-plan, écran éteint.
+
+<b>Prix</b>
+Bromide est en accès anticipé : il est entièrement gratuit, et le restera pour toujours pour tous ceux qui l’installent maintenant. Plus tard, les nouveaux utilisateurs auront les 36 premières photos de leur appareil gratuites, puis un achat unique débloquera l’application. Les photos prises avec le téléphone restent toujours gratuites. Pas d’abonnement, pas de pub, pas de compte, et rien n’est pisté. Tout tourne sur le téléphone, sans internet, et vos photos y restent.
+
+<b>Code source</b>
+Bromide est un logiciel libre sous GPLv3. Le code est sur GitHub : github.com/adhdmaxxing/Bromide. Science des couleurs par spektrafilm (Andrea Volpato), décodage RAW par LibRaw.
+
+Les noms de films sont des marques de leurs propriétaires. Bromide n’est ni affilié à Kodak, Fujifilm, Ilford ou CineStill, ni approuvé par eux.

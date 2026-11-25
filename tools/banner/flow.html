@@ -1,0 +1,211 @@
+<!doctype html>
+<!-- How Bromide works, in the banner's style: a camera, a photo on its way, the developed print on the phone.
+     Open in Chrome with a size in the hash, e.g. flow.html#w=2400&h=867 (labels=0 hides the captions), or render headless:
+     chrome --headless=new --allow-file-access-from-files --window-size=2400,867 --screenshot=flow.jpg "file:///.../flow.html#w=2400&h=867" -->
+<html><head><meta charset="utf-8">
+<style>
+@font-face { font-family: Heros; src: url(texgyreheros-regular.otf); font-weight: 400; }
+html, body { margin: 0; background: #000; overflow: hidden; }
+canvas { display: block; }
+</style></head>
+<body><canvas id="c"></canvas>
+<script>
+// Params from the URL hash: w, h, seed, grain, labels
+const q = Object.fromEntries(new URLSearchParams(location.hash.slice(1)));
+const W = +(q.w || 2400), H = +(q.h || 867), SEED = +(q.seed || 3);
+const GRAIN = +(q.grain || 22), LABELS = q.labels !== '0';
+
+let s = SEED >>> 0;
+const rnd = () => { s = (s + 0x6D2B79F5) >>> 0; let t = s; t = Math.imul(t ^ t >>> 15, t | 1); t ^= t + Math.imul(t ^ t >>> 7, t | 61); return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+const gauss = () => (rnd() + rnd() + rnd() + rnd() - 2) * 1.2247;
+
+const c = document.getElementById('c');
+c.width = W; c.height = H;
+const ctx = c.getContext('2d');
+
+function glow(x, y, r, color, alpha) {
+  const g = ctx.createRadialGradient(x * W, y * H, 0, x * W, y * H, r * Math.max(W, H));
+  g.addColorStop(0, color);
+  g.addColorStop(1, 'rgba(0,0,0,0)');
+  ctx.globalAlpha = alpha;
+  ctx.fillStyle = g;
+  ctx.fillRect(0, 0, W, H);
+  ctx.globalAlpha = 1;
+}
+
+// The drawing lives in a 2400x867 design space, scaled to fit and centered.
+const K = Math.min(W / 2400, H / 867);
+const OX = (W - 2400 * K) / 2, OY = (H - 867 * K) / 2;
+
+function rrect(p, x, y, w, h, r) {
+  p.moveTo(x + r, y);
+  p.arcTo(x + w, y, x + w, y + h, r);
+  p.arcTo(x + w, y + h, x, y + h, r);
+  p.arcTo(x, y + h, x, y, r);
+  p.arcTo(x, y, x + w, y, r);
+  p.closePath();
+}
+
+// Camera, seen from the front: body, viewfinder hump, grip, shutter button, lens.
+const camera = new Path2D();
+rrect(camera, 560, 340, 440, 280, 36);
+camera.moveTo(700, 340); camera.lineTo(728, 284); camera.lineTo(852, 284); camera.lineTo(880, 340);
+camera.moveTo(648, 362); camera.lineTo(648, 598);
+rrect(camera, 590, 316, 46, 24, 6);
+const lens = new Path2D();
+lens.arc(790, 482, 112, 0, Math.PI * 2);
+lens.moveTo(864, 482); lens.arc(790, 482, 74, 0, Math.PI * 2);
+const glint = new Path2D();
+glint.arc(790, 482, 40, Math.PI * 1.08, Math.PI * 1.42);
+
+// Phone: body and punch-hole; the print on its screen is filled separately.
+const phone = new Path2D();
+rrect(phone, 1540, 214, 230, 450, 38);
+phone.moveTo(1662, 246); phone.arc(1655, 246, 7, 0, Math.PI * 2);
+const PRINT = [1578, 330, 154, 196];  // x, y, w, h: a print with a paper border
+const IMG = [PRINT[0] + 14, PRINT[1] + 14, PRINT[2] - 28, PRINT[3] - 46];
+
+// The photo on its way: dots that warm up as they travel.
+const DOTS = [1066, 1128, 1190, 1252, 1314, 1376];
+const DY = 480;
+
+function strokeLines(p, width, color) {
+  ctx.lineWidth = width; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+  ctx.strokeStyle = color; ctx.stroke(p);
+}
+
+// Light sources drawn with halation, like the wordmark: blurred passes of red-orange, then the core.
+const HALO = [
+  [150, '#a00c06', 0.75],
+  [60, '#e01a0e', 0.95],
+  [24, '#ff3014', 0.85],
+  [8, '#ff5a22', 0.70],
+  [3, '#ffb27a', 0.50],
+];
+function halate(shape, strength) {
+  ctx.globalCompositeOperation = 'lighter';
+  for (const [b, col, a] of HALO) {
+    ctx.save();
+    ctx.filter = `blur(${b * K * 0.8}px)`;
+    ctx.globalAlpha = a * strength;
+    shape(col);
+    ctx.restore();
+  }
+  ctx.globalCompositeOperation = 'source-over';
+}
+
+async function draw() {
+  await document.fonts.load('400 100px Heros');
+
+  // Same night-negative background as the banner.
+  const base = ctx.createLinearGradient(0, 0, W * 0.35, H);
+  base.addColorStop(0, '#0a1d2e');
+  base.addColorStop(0.55, '#0c2a33');
+  base.addColorStop(1, '#0d3329');
+  ctx.fillStyle = base;
+  ctx.fillRect(0, 0, W, H);
+  ctx.globalCompositeOperation = 'screen';
+  glow(0.78, 0.20, 0.50, '#1a5478', 0.65);
+  glow(0.92, 0.95, 0.45, '#1d6648', 0.70);
+  glow(0.30, 0.95, 0.40, '#145058', 0.55);
+  ctx.globalCompositeOperation = 'source-over';
+
+  ctx.save();
+  ctx.translate(OX, OY);
+  ctx.scale(K, K);
+
+  // The camera is cold: what it takes is still a raw, undeveloped picture.
+  ctx.save();
+  ctx.filter = `blur(${14 * K}px)`;
+  ctx.globalAlpha = 0.35;
+  strokeLines(camera, 9, '#9fc4c4'); strokeLines(lens, 9, '#9fc4c4');
+  ctx.restore();
+  strokeLines(camera, 9, '#c9d6d2');
+  strokeLines(lens, 9, '#c9d6d2');
+  strokeLines(glint, 7, '#c9d6d2');
+
+  // On the way, it warms up.
+  const dot = (i, col) => {
+    const t = i / (DOTS.length - 1);
+    ctx.beginPath(); ctx.arc(DOTS[i], DY, 7 + 5 * t, 0, Math.PI * 2);
+    ctx.fillStyle = col; ctx.fill();
+  };
+  DOTS.forEach((_, i) => {
+    const t = i / (DOTS.length - 1);
+    halate(col => dot(i, col), t * 0.8);
+    const r = Math.round(201 + (255 - 201) * t), g = Math.round(214 + (244 - 214) * t), b = Math.round(210 + (230 - 210) * t);
+    dot(i, `rgb(${r},${g},${b})`);
+  });
+  const chevron = new Path2D();
+  chevron.moveTo(1432, DY - 30); chevron.lineTo(1462, DY); chevron.lineTo(1432, DY + 30);
+  halate(col => strokeLines(chevron, 11, col), 0.9);
+  strokeLines(chevron, 11, '#fff4e6');
+
+  // The phone and the developed print glow.
+  const printShape = col => {
+    ctx.fillStyle = col;
+    ctx.beginPath(); ctx.rect(...PRINT); ctx.fill();
+  };
+  halate(col => { strokeLines(phone, 9, col); printShape(col); }, 1);
+  strokeLines(phone, 9, '#fff4e6');
+  printShape('#fff4e6');
+  // A warm frame inside the border: dusk over water, the kind of light Bromide loves.
+  const sky = ctx.createLinearGradient(0, IMG[1], 0, IMG[1] + IMG[3]);
+  sky.addColorStop(0, '#2b1830');
+  sky.addColorStop(0.45, '#c2421f');
+  sky.addColorStop(0.62, '#f2a35a');
+  sky.addColorStop(0.63, '#5a2a24');
+  sky.addColorStop(1, '#1c1418');
+  ctx.fillStyle = sky;
+  ctx.fillRect(...IMG);
+  ctx.save();
+  ctx.beginPath(); ctx.rect(...IMG); ctx.clip();
+  const sun = ctx.createRadialGradient(IMG[0] + IMG[2] * 0.62, IMG[1] + IMG[3] * 0.56, 0, IMG[0] + IMG[2] * 0.62, IMG[1] + IMG[3] * 0.56, 34);
+  sun.addColorStop(0, '#fff1d0'); sun.addColorStop(0.35, '#ffc070'); sun.addColorStop(1, 'rgba(255,120,40,0)');
+  ctx.fillStyle = sun;
+  ctx.fillRect(...IMG);
+  ctx.restore();
+
+  if (LABELS) {
+    ctx.font = '400 34px Heros';
+    if ('letterSpacing' in ctx) ctx.letterSpacing = '6px';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'alphabetic';
+    ctx.fillStyle = '#8c9d9b';
+    ctx.fillText('SHOT ON YOUR CAMERA', 780, 726);
+    ctx.fillText('DEVELOPED ON YOUR PHONE', 1655, 726);
+  }
+  ctx.restore();
+
+  // Gentle vignette.
+  ctx.globalCompositeOperation = 'multiply';
+  const v = ctx.createRadialGradient(W * 0.5, H / 2, H * 0.3, W * 0.5, H / 2, W * 0.7);
+  v.addColorStop(0, '#ffffff');
+  v.addColorStop(1, '#8a9090');
+  ctx.fillStyle = v;
+  ctx.fillRect(0, 0, W, H);
+  ctx.globalCompositeOperation = 'source-over';
+
+  // Grain, as in the banner.
+  const img = ctx.getImageData(0, 0, W, H);
+  const d = img.data;
+  const cw = Math.ceil(W / 3) + 1, ch = Math.ceil(H / 3) + 1;
+  const clump = new Float32Array(cw * ch);
+  for (let i = 0; i < clump.length; i++) clump[i] = gauss();
+  for (let y = 0; y < H; y++) {
+    for (let x = 0; x < W; x++) {
+      const i = (y * W + x) * 4;
+      const l = (0.3 * d[i] + 0.59 * d[i + 1] + 0.11 * d[i + 2]) / 255;
+      const mid = 0.55 + 2.0 * l * (1 - l);
+      const g = (gauss() * 0.75 + clump[((y / 3) | 0) * cw + ((x / 3) | 0)] * 0.55) * GRAIN * mid;
+      const chroma = 9 * (1.2 - l);
+      d[i]     = d[i]     + g + gauss() * chroma;
+      d[i + 1] = d[i + 1] + g + gauss() * chroma;
+      d[i + 2] = d[i + 2] + g + gauss() * chroma * 1.2;
+    }
+  }
+  ctx.putImageData(img, 0, 0);
+  document.title = 'done';
+}
+draw();
+</script></body></html>
