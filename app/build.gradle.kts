@@ -19,7 +19,9 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.bromide.app"
+        // The code lives in com.bromide.app (namespace); on Play the app is app.bromide.film
+        // (com.bromide.app was taken there). Never change it once published.
+        applicationId = "app.bromide.film"
         minSdk = 29
         targetSdk = 36
         versionCode = buildNumber

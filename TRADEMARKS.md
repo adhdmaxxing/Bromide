@@ -11,7 +11,7 @@ no rights are granted to use the name "Bromide" or the Bromide logo and icon
 If you publish a modified version, or a build of your own, please:
 
 - give it a different name and icon, so nobody mistakes it for Bromide;
-- use a different application ID than `com.bromide.app`;
+- use a different application ID than `app.bromide.film`;
 - feel free to say it is "based on Bromide", with a link to this repository.
 
 Building Bromide for your own use, and sharing patches with this project, need
